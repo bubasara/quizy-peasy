@@ -40,13 +40,27 @@
         android:id="@+id/glDialogBottom"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glOkTop"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glOkBottom"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
     <!--    end of guidelines  -->
 
-    <!--    temp    -->
+    <!--    todo delete temp    -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/purple_500"/>
+        android:background="@color/purple_200"/>
 
     <!--    dialog  -->
     <!--    todo round edges    -->
@@ -116,5 +130,19 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--    end of dialog  -->
+
+    <!--    ok  -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/btnOk"
+        android:id="@+id/btnOk"
+        app:layout_constraintTop_toBottomOf="@id/glOkTop"
+        app:layout_constraintBottom_toTopOf="@+id/glOkBottom"
+        app:layout_constraintRight_toLeftOf="@id/glMiddleVertical"
+        app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+        android:background="@color/purple_500"
+        android:textSize="18dp"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
