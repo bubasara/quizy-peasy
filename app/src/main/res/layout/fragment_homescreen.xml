@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3"
+        android:id="@+id/glLeftVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/glMiddleVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"
+        android:id="@+id/glRightVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"
+        android:id="@+id/glLogoTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
+        android:id="@+id/glLogoBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"
+        android:id="@+id/glPlayTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"
+        android:id="@+id/glPlayBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"
+        android:id="@+id/glHowToPlayBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"
+        android:id="@+id/glPrivacyPolicyBottom"/>
+    <!--    end of guidelines  -->
+
+    <!--    background  -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main"
+        android:scaleType="fitXY"/>
+    <!--    end of background   -->
+
+    <!--    logo    -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="5:3"
+        app:layout_constraintLeft_toLeftOf="@+id/glMiddleVertical"
+        app:layout_constraintRight_toRightOf="@+id/glMiddleVertical"
+        app:layout_constraintTop_toBottomOf="@+id/glLogoTop"
+        app:layout_constraintBottom_toTopOf="@id/glLogoBottom"/>
+    <!--    end of logo    -->
+
+    <!--    play    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glPlayTop"
+        app:layout_constraintBottom_toTopOf="@id/glPlayBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:background="@color/purple_500"
+        android:id="@+id/btnPlay"
+        android:text="@string/btnPlay"
+        android:textColor="@color/white"/>
+    <!--    end of play    -->
+
+    <!--    how to play    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glPlayBottom"
+        app:layout_constraintBottom_toTopOf="@id/glHowToPlayBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:background="@color/purple_500"
+        android:id="@+id/btnHowToPlay"
+        android:text="@string/btnHowToPlay"
+        android:textColor="@color/white"/>
+    <!--    end of hot to play    -->
+
+    <!--    privacy policy    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glHowToPlayBottom"
+        app:layout_constraintBottom_toTopOf="@id/glPrivacyPolicyBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:background="@color/purple_500"
+        android:id="@+id/btnPrivacyPolicy"
+        android:text="@string/btnPrivacyPolicy"
+        android:textColor="@color/white"/>
+    <!--    end of hot to play    -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
