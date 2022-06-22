@@ -18,4 +18,7 @@
     <string name="txtViewC">C</string>
     <string name="txtViewD">D</string>
     <string name="btnCreate">Create</string>
+    <string name="btnPrevious">Previous</string>
+    <string name="btnSkip">Skip</string>
+    <string name="btnQuit">Quit</string>
 </resources>

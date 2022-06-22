@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"
+        android:id="@+id/glGameplayTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glGameplayBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glButtonsBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeftVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glMiddleVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+    <!--    end of guidelines  -->
+
+    <!--    background  -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_gameplay"
+        android:scaleType="centerCrop"/>
+    <!--    end of background   -->
+
+    <!--    question    -->
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glGameplayTop"
+        app:layout_constraintBottom_toTopOf="@id/glGameplayBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:id="@+id/layoutGameplay"
+        layout="@layout/item_gameplay"/>
+    <!--    end of question -->
+
+    <!--    previous button -->
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/glGameplayBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        android:text="@string/btnPrevious"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/btnPrevious"/>
+    <!--    end of previous button -->
+
+    <!--    skip button -->
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/glGameplayBottom"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/btnSkip"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/btnNext"/>
+    <!--    end of skip button -->
+
+    <!--    quit button -->
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@id/glButtonsBottom"
+        app:layout_constraintLeft_toLeftOf="@id/glMiddleVertical"
+        app:layout_constraintRight_toRightOf="@id/glMiddleVertical"
+        android:text="@string/btnQuit"
+        android:background="@color/purple_700"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/btnQuit"/>
+    <!--    end of quit button -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
