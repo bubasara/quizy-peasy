@@ -7,6 +7,6 @@ import bubasara.quizypeasy.R
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_create_new_category)
+        setContentView(R.layout.dialog_create_new_question)
     }
 }

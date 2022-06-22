@@ -12,4 +12,10 @@
     <string name="btnCreateCategory">Create Category</string>
     <string name="txtViewCategoryName">Category Name</string>
     <string name="question">Add Question</string>
+    <string name="txtViewCreateNewQuestion">Create New Question</string>
+    <string name="txtViewA">A</string>
+    <string name="txtViewB">B</string>
+    <string name="txtViewC">C</string>
+    <string name="txtViewD">D</string>
+    <string name="btnCreate">Create</string>
 </resources>
