@@ -143,6 +143,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         app:layout_constraintTop_toBottomOf="@id/glCategoryImageBottom"
         app:layout_constraintBottom_toTopOf="@id/glTitleBottom"
         app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
@@ -152,25 +154,40 @@
         android:textSize="20sp"
         android:textColor="@color/black"
         android:inputType="text"
-        android:autofillHints="Enter category name here"
         android:background="@color/white"
         android:labelFor="@+id/txtViewCategoryName"
         android:id="@+id/editTxtCategoryName"/>
     <!--    end of category name edit text -->
 
-    <!--    question  -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!--    button question  -->
+    <Button
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/glTitleBottom"
         app:layout_constraintBottom_toTopOf="@id/glMiddleHorizontal"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
         android:text="@string/question"
         android:textSize="20sp"
         android:textColor="@color/white"
+        android:background="@color/purple_500"
         android:id="@+id/txtViewQuestion"/>
-    <!--    end of question   -->
+    <!--    end of button question   -->
 
+    <!--    recycler view with questions   -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/glMiddleHorizontal"
+        app:layout_constraintBottom_toTopOf="@id/glRecyclerViewBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:id="@+id/recyclerViewQuestions">
+    </androidx.recyclerview.widget.RecyclerView>
+    <!--    end of recycler view with questions   -->
 
     <!--    button create new category  -->
     <Button
