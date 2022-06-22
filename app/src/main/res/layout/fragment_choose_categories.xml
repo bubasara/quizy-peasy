@@ -126,7 +126,7 @@
         app:layout_constraintBottom_toTopOf="@id/glAddNewCategoryBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
-        android:text="@string/btnAddNewCategory"
+        android:text="@string/btnCreateNewCategory"
         android:background="@color/purple_500"
         android:textColor="@color/white"
         android:textSize="18sp"
