@@ -21,4 +21,6 @@
     <string name="btnPrevious">Previous</string>
     <string name="btnSkip">Skip</string>
     <string name="btnQuit">Quit</string>
+    <string name="txtViewAnswers">Answers</string>
+    <string name="btnAnswerA" />
 </resources>
