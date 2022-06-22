@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.15"
-        android:id="@+id/glCreateNewCategoryBottom"/>
+        android:id="@+id/glDialogTop"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
         app:layout_constraintGuide_percent="0.5"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glRecyclerViewBottom"
+        android:id="@+id/glDialogBottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -103,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/glCreateNewCategoryTop"
-        app:layout_constraintBottom_toTopOf="@id/glCreateNewCategoryBottom"
+        app:layout_constraintBottom_toTopOf="@id/glDialogTop"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
         android:text="@string/txtViewCreateNewCategory"
@@ -116,7 +116,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/glCreateNewCategoryBottom"
+        app:layout_constraintTop_toBottomOf="@id/glDialogTop"
         app:layout_constraintBottom_toTopOf="@id/glCategoryImageBottom"
         app:layout_constraintLeft_toRightOf="@id/glCategoryImageLeft"
         app:layout_constraintRight_toLeftOf="@id/glCategoryImageRight"
@@ -179,7 +179,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/glMiddleHorizontal"
-        app:layout_constraintBottom_toTopOf="@id/glRecyclerViewBottom"
+        app:layout_constraintBottom_toTopOf="@id/glDialogBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
         android:layout_marginTop="10dp"
@@ -193,7 +193,7 @@
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/glRecyclerViewBottom"
+        app:layout_constraintTop_toBottomOf="@id/glDialogBottom"
         app:layout_constraintBottom_toTopOf="@id/glBtnCreateNewCategoryBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
