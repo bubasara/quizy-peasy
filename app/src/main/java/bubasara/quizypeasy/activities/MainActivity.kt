@@ -7,6 +7,6 @@ import bubasara.quizypeasy.R
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_how_to_play)
+        setContentView(R.layout.fragment_choose_categories)
     }
 }
