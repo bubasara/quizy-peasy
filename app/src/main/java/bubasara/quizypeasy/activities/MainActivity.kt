@@ -7,6 +7,6 @@ import bubasara.quizypeasy.R
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_gameplay)
+        setContentView(R.layout.dialog_delete_category)
     }
 }

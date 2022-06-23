@@ -23,4 +23,8 @@
     <string name="btnQuit">Quit</string>
     <string name="txtViewAnswers">Answers</string>
     <string name="btnAnswerA" />
+    <string name="txtViewAreYouSure">ARE YOU SURE</string>
+    <string name="txtViewThatYouWantToDeleteThisCategory">that you want to delete this category?</string>
+    <string name="btnYes">yes</string>
+    <string name="btnNo">no</string>
 </resources>
