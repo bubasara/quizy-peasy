@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"
+        android:id="@+id/glLeftVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glVerticalMiddle"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"
+        android:id="@+id/glRightVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"
+        android:id="@+id/glLogoTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"
+        android:id="@+id/glLogoBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glElementsBottom"
+        app:layout_constraintGuide_percent="0.9"
+        android:orientation="horizontal"/>
+    <!--    end of guidelines  -->
+
+    <!--    background  -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/bg_gameplay"
+        android:scaleType="fitXY"/>
+    <!--    end of background   -->
+
+    <!--    logo    -->
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/glLogoTop"
+        app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
+        app:layout_constraintLeft_toRightOf="@+id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@+id/glRightVertical"
+        android:src="@drawable/logo"
+        android:id="@+id/imgLogo"/>
+    <!--    end of logo -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glLogoBottom"
+        app:layout_constraintLeft_toLeftOf="@+id/glLeftVertical"
+        app:layout_constraintRight_toRightOf="@+id/glRightVertical">
+
+        <!--    elements -->
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
+            android:padding="10dp"
+            android:src="@drawable/circle"
+            android:id="@+id/imgCircle"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
+            android:padding="10dp"
+            android:src="@drawable/triangle"
+            android:id="@+id/imgTriangle"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
+            android:padding="10dp"
+            android:src="@drawable/square_rotated"
+            android:id="@+id/imgSquareRotated"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
+            android:padding="10dp"
+            android:src="@drawable/square"
+            android:id="@+id/imgSquare"/>
+        <!--    end of elements -->
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
