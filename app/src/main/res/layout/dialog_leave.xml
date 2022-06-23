@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glVerticalMiddle"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="vertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glDialogTop"
+        app:layout_constraintGuide_percent="0.1"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glDialogBottom"
+        app:layout_constraintGuide_percent="0.6"
+        android:orientation="horizontal"/>
+    <!--    end of guidelines  -->
+
+    <!--    todo delete temp    -->
+    <!--    background  -->
+    <ImageView
+        android:id="@+id/imgViewBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scaleType="centerCrop"/>
+    <!--    end of background -->
+
+    <!--    dialog container    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/glDialogTop"
+        app:layout_constraintBottom_toTopOf="@+id/glDialogBottom"
+        app:layout_constraintLeft_toLeftOf="@id/glVerticalMiddle"
+        app:layout_constraintRight_toRightOf="@id/glVerticalMiddle"
+        android:background="@color/white"
+        android:id="@+id/constraintLayoutDialogHolder">
+
+        <!--    guidelines  -->
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"
+            android:id="@+id/glHeaderBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8"
+            android:id="@+id/glFooterTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25"
+            android:id="@+id/glYesMiddle"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            android:id="@+id/glMiddleVertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.75"
+            android:orientation="vertical"
+            android:id="@+id/glNoMiddle"/>
+        <!--    end of guidelines for fragment dialog  -->
+
+        <!--    are you sure  -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/glHeaderBottom"
+            android:text="@string/txtViewAreYouSure"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="@color/purple_500"
+            android:gravity="center"
+            android:id="@+id/txtViewAreYouSure"/>
+        <!--    end of are you sure   -->
+
+        <!--    that you want to leave? -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewAreYouSure"
+            app:layout_constraintBottom_toTopOf="@id/glFooterTop"
+            android:padding="10dp"
+            android:layout_margin="15dp"
+            android:text="@string/txtViewThatYouWantToLeave"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewThatYouWantToLeave"/>
+        <!--    that you want to leave? -->
+
+        <!--    yes button   -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/glFooterTop"
+            app:layout_constraintLeft_toLeftOf="@id/glYesMiddle"
+            app:layout_constraintRight_toRightOf="@id/glYesMiddle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/purple_500"
+            android:text="@string/btnYes"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/btnYes"/>
+        <!--    end of yes button   -->
+
+        <!--    no button   -->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/glFooterTop"
+            app:layout_constraintLeft_toLeftOf="@id/glNoMiddle"
+            app:layout_constraintRight_toRightOf="@id/glNoMiddle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/purple_500"
+            android:text="@string/btnNo"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/btnNo"/>
+        <!--    end of add button   -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    end of dialog container  -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
