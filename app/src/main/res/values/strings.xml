@@ -28,4 +28,13 @@
     <string name="btnYes">yes</string>
     <string name="btnNo">no</string>
     <string name="txtViewThatYouWantToLeave">that you want to leave?</string>
+    <string name="txtViewStats">Stats</string>
+    <string name="txtViewCorrect">Correct:</string>
+    <string name="txtViewWrong">Wrong:</string>
+    <string name="txtViewNumberOfQuestions">Number of\nquestions:</string>
+    <string name="txtViewNumberTotal">x</string>
+    <string name="txtViewCorrectNumber">y</string>
+    <string name="txtViewWrongNumber">z</string>
+    <string name="btnPlayAgain">Play again</string>
+    <string name="txtViewPercentage">__%</string>
 </resources>

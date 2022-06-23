@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"
+        android:id="@+id/glLeftVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/glMiddleVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"
+        android:id="@+id/glRightVertical"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"
+        android:id="@+id/glStatsTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        android:id="@+id/glStatsBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"
+        android:id="@+id/glNumberOfQuestionsTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        android:id="@+id/glCorrectTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"
+        android:id="@+id/glWrongTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        android:id="@+id/glWrongBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"
+        android:id="@+id/glPlayAgainTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75"
+        android:id="@+id/glPlayAgainBottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"
+        android:id="@+id/glQuitBottom"/>
+    <!--    end of guidelines  -->
+
+    <!--    background  -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gameplay"
+        android:scaleType="fitXY"/>
+    <!--    end of background   -->
+
+    <!--    stats   -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glStatsTop"
+        app:layout_constraintBottom_toTopOf="@id/glStatsBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/txtViewStats"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewStats"/>
+    <!--    end of stats   -->
+
+    <!--    number of questions text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glNumberOfQuestionsTop"
+        app:layout_constraintBottom_toTopOf="@id/glCorrectTop"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        android:text="@string/txtViewNumberOfQuestions"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewNumberOfQuestions"/>
+    <!--    end of number of questions text-->
+
+    <!--    number of questions number-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glNumberOfQuestionsTop"
+        app:layout_constraintBottom_toTopOf="@id/glCorrectTop"
+        app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/txtViewNumberTotal"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewNumberTotal"/>
+    <!--    end of number of questions number -->
+
+    <!--    correct text    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glCorrectTop"
+        app:layout_constraintBottom_toTopOf="@id/glWrongTop"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        android:text="@string/txtViewCorrect"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewCorrect"/>
+    <!--    end correct text    -->
+
+    <!--    correct number  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glCorrectTop"
+        app:layout_constraintBottom_toTopOf="@id/glWrongTop"
+        app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/txtViewCorrectNumber"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewCorrectNumber"/>
+    <!--    end correct number  -->
+
+    <!--    wrong text  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glWrongTop"
+        app:layout_constraintBottom_toTopOf="@id/glWrongBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        android:text="@string/txtViewWrong"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewWrong"/>
+    <!--    end wrong text -->
+
+    <!--    wrong number  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glWrongTop"
+        app:layout_constraintBottom_toTopOf="@id/glWrongBottom"
+        app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/txtViewWrongNumber"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewWrongNumber"/>
+    <!--    end wrong number -->
+
+    <!--    percentage  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glWrongBottom"
+        app:layout_constraintBottom_toTopOf="@id/glPlayAgainTop"
+        app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+        app:layout_constraintRight_toLeftOf="@id/glMiddleVertical"
+        android:text="@string/txtViewPercentage"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:id="@+id/txtViewPercentage"/>
+    <!--    end percentage -->
+
+    <!--    play again    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glPlayAgainTop"
+        app:layout_constraintBottom_toTopOf="@id/glPlayAgainBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/btnPlayAgain"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/btnPlayAgain"/>
+    <!--    end of play again    -->
+
+    <!--    quit    -->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/glPlayAgainBottom"
+        app:layout_constraintBottom_toTopOf="@id/glQuitBottom"
+        app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
+        app:layout_constraintRight_toLeftOf="@id/glRightVertical"
+        android:text="@string/btnQuit"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/btnQuit"/>
+    <!--    end of quit    -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
