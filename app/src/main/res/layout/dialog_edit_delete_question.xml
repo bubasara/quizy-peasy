@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    guidelines  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"
+        android:id="@+id/glDialogTop"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glDialogBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeftVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRightVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+    <!--    end of guidelines  -->
+
+    <!--    todo delete temp    -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_main"
+        android:scaleType="centerCrop"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:id="@+id/clHowToPlayContainer"
+        app:layout_constraintTop_toBottomOf="@id/glDialogTop"
+        app:layout_constraintBottom_toTopOf="@id/glDialogBottom"
+        app:layout_constraintLeft_toLeftOf="@id/glLeftVertical"
+        app:layout_constraintRight_toRightOf="@id/glRightVertical"
+        android:layout_margin="15dp">
+
+        <!--    guidelines  -->
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02"
+            android:id="@+id/glCreateNewQuestionTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08"
+            android:id="@+id/glCreateNewQuestionBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"
+            android:id="@+id/glQuestionContentTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"
+            android:id="@+id/glQuestionContentBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4"
+            android:id="@+id/glAnswerATop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            android:id="@+id/glAnswerBTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6"
+            android:id="@+id/glAnswerCTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"
+            android:id="@+id/glAnswerDTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8"
+            android:id="@+id/glAnswerDBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85"
+            android:id="@+id/glCreateTop"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"
+            android:id="@+id/glCreateBottom"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+            android:id="@+id/glInsideDialogLeft"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"
+            android:id="@+id/glAnswerLeft"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMiddleVertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"
+            android:id="@+id/glInsideDialogRight"/>
+        <!--    end of guidelines   -->
+
+        <!--    create new question -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glCreateNewQuestionTop"
+            app:layout_constraintBottom_toTopOf="@id/glCreateNewQuestionBottom"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:text="@string/txtViewEditQuestion"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewEditQuestion"/>
+        <!--    end of create new question -->
+
+        <!--    question content    -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/glQuestionContentTop"
+            app:layout_constraintBottom_toTopOf="@id/glQuestionContentBottom"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:maxLength="100"
+            android:maxLines="5"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="textMultiLine"
+            android:background="@color/purple_500"
+            android:labelFor="@+id/txtViewCategoryName"
+            android:id="@+id/editTxtQuestionContent"/>
+        <!--    end of question content    -->
+
+        <!--    A   -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerATop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerBTop"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            android:text="@string/txtViewA"
+            android:textColor="@color/purple_500"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewA"/>
+        <!--    end of A   -->
+
+        <!--    answer A -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerATop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerBTop"
+            app:layout_constraintLeft_toRightOf="@id/glAnswerLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:background="@color/purple_700"
+            android:labelFor="@+id/txtViewA"
+            android:id="@+id/editTxtA"/>
+        <!--    end of answer A  -->
+
+        <!--    B   -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerBTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerCTop"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            android:text="@string/txtViewB"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewB"/>/>
+        <!--    end of B   -->
+
+        <!--    answer B -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerBTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerCTop"
+            app:layout_constraintLeft_toRightOf="@id/glAnswerLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:background="@color/purple_700"
+            android:labelFor="@+id/txtViewB"
+            android:id="@+id/editTxtB"/>
+        <!--    end of answer B  -->
+
+        <!--    C   -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerCTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerDTop"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            android:text="@string/txtViewC"
+            android:textColor="@color/purple_500"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewC"/>/>
+        <!--    end of C   -->
+
+        <!--    answer C -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerCTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerDTop"
+            app:layout_constraintLeft_toRightOf="@id/glAnswerLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:background="@color/purple_700"
+            android:labelFor="@+id/txtViewC"
+            android:id="@+id/editTxtC"/>
+        <!--    end of answer C  -->
+
+        <!--    D   -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerDTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerDBottom"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            android:text="@string/txtViewD"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewD"/>/>
+        <!--    end of D   -->
+
+        <!--    answer D -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerDTop"
+            app:layout_constraintBottom_toTopOf="@id/glAnswerDBottom"
+            app:layout_constraintLeft_toRightOf="@id/glAnswerLeft"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:background="@color/purple_700"
+            android:labelFor="@+id/txtViewD"
+            android:id="@+id/editTxtD"/>
+        <!--    end of answer D  -->
+
+        <!--    save    -->
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glCreateTop"
+            app:layout_constraintBottom_toTopOf="@id/glCreateBottom"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            app:layout_constraintRight_toLeftOf="@id/glMiddleVertical"
+            android:text="@string/btnSave"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/btnSave"/>
+        <!--    end of save  -->
+
+        <!--    delete    -->
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glCreateTop"
+            app:layout_constraintBottom_toTopOf="@id/glCreateBottom"
+            app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:text="@string/btnDelete"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:id="@+id/btnDelete"/>
+        <!--    end of delete  -->
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,4 +37,7 @@
     <string name="txtViewWrongNumber">z</string>
     <string name="btnPlayAgain">Play again</string>
     <string name="txtViewPercentage">__%</string>
+    <string name="txtViewEditQuestion">Edit Question</string>
+    <string name="btnSave">Save</string>
+    <string name="btnDelete">Delete</string>
 </resources>
