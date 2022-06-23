@@ -170,7 +170,8 @@
             android:text="@string/txtViewCreateNewQuestion"
             android:textColor="@color/purple_700"
             android:textSize="24sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:id="@+id/txtViewCreateNewQuestion"/>
         <!--    end of create new question -->
 
         <!--    question content    -->
