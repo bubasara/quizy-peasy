@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"
+        app:layout_constraintGuide_percent="0.25"
         android:id="@+id/glLeftVertical"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintGuide_percent="0.75"
         android:id="@+id/glRightVertical"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -85,15 +85,8 @@
             android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
             android:padding="10dp"
-            android:src="@drawable/circle"
-            android:id="@+id/imgCircle"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
-            android:padding="10dp"
-            android:src="@drawable/triangle"
-            android:id="@+id/imgTriangle"/>
+            android:src="@drawable/square"
+            android:id="@+id/imgSquare"/>
         <ImageView
             android:layout_width="50dp"
             android:layout_height="match_parent"
@@ -106,8 +99,8 @@
             android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/glLogoBottom"
             android:padding="10dp"
-            android:src="@drawable/square"
-            android:id="@+id/imgSquare"/>
+            android:src="@drawable/triangle"
+            android:id="@+id/imgTriangle"/>
         <!--    end of elements -->
     </LinearLayout>
 

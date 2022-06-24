@@ -15,8 +15,8 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
-        //setContentView(binding.root)
-        setContentView(R.layout.item_category)
+        setContentView(binding.root)
+        //setContentView(R.layout.item_category)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
     }
