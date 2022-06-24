@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashscreenFragment">
+
+    <fragment
+        android:id="@+id/splashscreenFragment"
+        android:name="bubasara.quizypeasy.fragments.SplashscreenFragment"
+        android:label="SplashscreenFragment"
+        tools:layout="@layout/fragment_splashscreen">
+        <action
+            android:id="@+id/action_splashscreenFragment_to_homescreenFragment"
+            app:destination="@id/homescreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homescreenFragment"
+        android:name="bubasara.quizypeasy.fragments.HomescreenFragment"
+        android:label="HomescreenFragment"
+        tools:layout="@layout/fragment_homescreen">
+        <action
+            android:id="@+id/action_homescreenFragment_to_howToPlayDialog"
+            app:destination="@id/howToPlayDialog" />
+        <action
+            android:id="@+id/action_homescreenFragment_to_chooseCategoriesFragment"
+            app:destination="@id/chooseCategoriesFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/howToPlayDialog"
+        android:name="bubasara.quizypeasy.dialogs.HowToPlayDialog"
+        android:label="HowToPlayDialog"
+        tools:layout="@layout/dialog_how_to_play"/>
+    <fragment
+        android:id="@+id/chooseCategoriesFragment"
+        android:name="bubasara.quizypeasy.fragments.ChooseCategoriesFragment"
+        android:label="ChooseCategoriesFragment"
+        tools:layout="@layout/fragment_choose_categories">
+        <action
+            android:id="@+id/action_chooseCategoriesFragment_to_createNewCategoryFragment"
+            app:destination="@id/createNewCategoryFragment" />
+        <action
+            android:id="@+id/action_chooseCategoriesFragment_to_deleteCategoryDialog"
+            app:destination="@id/deleteCategoryDialog" />
+        <action
+            android:id="@+id/action_chooseCategoriesFragment_to_gamePlayFragment"
+            app:destination="@id/gamePlayFragment" />
+        <action
+            android:id="@+id/action_chooseCategoriesFragment_to_itemCategoryFragment"
+            app:destination="@id/itemCategoryFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteCategoryDialog"
+        android:name="bubasara.quizypeasy.dialogs.DeleteCategoryDialog"
+        android:label="DeleteCategoryDialog"
+        tools:layout="@layout/dialog_delete_category">
+        <action
+            android:id="@+id/action_deleteCategoryDialog_to_chooseCategoriesFragment"
+            app:destination="@id/chooseCategoriesFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/createNewCategoryFragment"
+        android:name="bubasara.quizypeasy.fragments.CreateNewCategoryFragment"
+        android:label="CreateNewCategoryFragment"
+        tools:layout="@layout/fragment_create_new_category" >
+        <action
+            android:id="@+id/action_createNewCategoryFragment_to_createNewQuestionFragment"
+            app:destination="@id/createNewQuestionFragment" />
+        <action
+            android:id="@+id/action_createNewCategoryFragment_to_editDeleteQuestionDialog"
+            app:destination="@id/editDeleteQuestionDialog" />
+        <action
+            android:id="@+id/action_createNewCategoryFragment_to_chooseCategoriesFragment"
+            app:destination="@id/chooseCategoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamePlayFragment"
+        android:name="bubasara.quizypeasy.fragments.GameplayFragment"
+        android:label="GamePlayFragment"
+        tools:layout="@layout/fragment_gameplay">
+        <action
+            android:id="@+id/action_gamePlayFragment_to_itemGameplayFragment"
+            app:destination="@id/itemGameplayFragment" />
+        <action
+            android:id="@+id/action_gamePlayFragment_to_statsFragment"
+            app:destination="@id/statsFragment" />
+        <action
+            android:id="@+id/action_gamePlayFragment_to_leaveDialog"
+            app:destination="@id/leaveDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/createNewQuestionFragment"
+        android:name="bubasara.quizypeasy.dialogs.CreateNewQuestionFragment"
+        android:label="CreateNewQuestionFragment"
+        tools:layout="@layout/dialog_create_new_question"/>
+    <dialog
+        android:id="@+id/editDeleteQuestionDialog"
+        android:name="bubasara.quizypeasy.dialogs.EditDeleteQuestionDialog"
+        android:label="EditDeleteQuestionDialog"
+        tools:layout="@layout/dialog_edit_delete_question"/>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="bubasara.quizypeasy.fragments.StatsFragment"
+        android:label="StatsFragment"
+        tools:layout="@layout/fragment_stats">
+        <action
+            android:id="@+id/action_statsFragment_to_leaveDialog"
+            app:destination="@id/leaveDialog" />
+        <action
+            android:id="@+id/action_statsFragment_to_chooseCategoriesFragment"
+            app:destination="@id/chooseCategoriesFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/leaveDialog"
+        android:name="bubasara.quizypeasy.dialogs.LeaveDialog"
+        android:label="LeaveDialog"
+        tools:layout="@layout/dialog_leave"/>
+    <fragment
+        android:id="@+id/itemGameplayFragment"
+        android:name="bubasara.quizypeasy.fragments.ItemGameplayFragment"
+        android:label="ItemGameplayFragment"
+        tools:layout="@layout/item_gameplay"/>
+    <fragment
+        android:id="@+id/itemCategoryFragment"
+        android:name="bubasara.quizypeasy.fragments.ItemCategoryFragment"
+        android:label="ItemCategoryFragment"
+        tools:layout="@layout/item_category">
+        <action
+            android:id="@+id/action_itemCategoryFragment_to_deleteCategoryDialog"
+            app:destination="@id/deleteCategoryDialog" />
+    </fragment>
+</navigation>
