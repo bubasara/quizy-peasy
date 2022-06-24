@@ -31,7 +31,7 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4"
-        android:id="@+id/glTitleBottom"/>
+        android:id="@+id/glCategoryNameBottom"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glMiddleHorizontal"
@@ -129,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/glCategoryImageBottom"
-        app:layout_constraintBottom_toTopOf="@id/glTitleBottom"
+        app:layout_constraintBottom_toTopOf="@id/glCategoryNameBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         android:text="@string/txtViewCategoryName"
         android:textSize="20sp"
@@ -146,7 +146,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         app:layout_constraintTop_toBottomOf="@id/glCategoryImageBottom"
-        app:layout_constraintBottom_toTopOf="@id/glTitleBottom"
+        app:layout_constraintBottom_toTopOf="@id/glCategoryNameBottom"
         app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
         android:maxLength="20"
@@ -163,7 +163,7 @@
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/glTitleBottom"
+        app:layout_constraintTop_toBottomOf="@id/glCategoryNameBottom"
         app:layout_constraintBottom_toTopOf="@id/glMiddleHorizontal"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"

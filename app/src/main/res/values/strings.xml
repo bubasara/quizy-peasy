@@ -31,7 +31,7 @@
     <string name="txtViewStats">Stats</string>
     <string name="txtViewCorrect">Correct:</string>
     <string name="txtViewWrong">Wrong:</string>
-    <string name="txtViewNumberOfQuestions">Number of\nquestions:</string>
+    <string name="txtViewNumberOfQuestions">x questions:</string>
     <string name="txtViewNumberTotal">x</string>
     <string name="txtViewCorrectNumber">y</string>
     <string name="txtViewWrongNumber">z</string>
