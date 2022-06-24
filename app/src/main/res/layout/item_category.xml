@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple_500">
+
+    <!--    guidelines  -->
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glContainerOuterTop"
+        app:layout_constraintGuide_percent="0.4"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/glContainerOuterBottom"
+        app:layout_constraintGuide_percent="0.6"
+        android:orientation="horizontal"/>
+    <!--    end of guidelines  -->
+
+    <!--    outer constraint layout for category  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/categoryContainerOuter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/glContainerOuterTop"
+        app:layout_constraintBottom_toBottomOf="@id/glContainerOuterBottom"
+        tools:targetApi="o">
+
+        <!--    outer guidelines  -->
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glContainerOuterLeft"
+            app:layout_constraintGuide_percent="0.1"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glImageRight"
+            app:layout_constraintGuide_percent="0.3"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glContainerOuterRight"
+            app:layout_constraintGuide_percent="0.95"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/glImageBottom"
+            app:layout_constraintGuide_percent="0.6"
+            android:orientation="horizontal"/>
+        <!--    end of outer guidelines  -->
+
+
+        <!--    inner cl for name, number and img  -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="30sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/glContainerOuterLeft"
+            app:layout_constraintRight_toRightOf="@id/glContainerOuterRight"
+            android:background="@color/white"
+            android:id="@+id/categoryContainerInner">
+
+            <!--    inner guidelines  -->
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3"
+                android:id="@+id/glCategoryNameLeft"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65"
+                android:id="@+id/glCategoryNameRight"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.7"
+                android:id="@+id/glCheckedVerticalLeft"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9"
+                android:id="@+id/glCheckedVerticalRight"/>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1"
+                android:id="@+id/glCategoryNameTop"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_percent="0.5"
+                android:orientation="horizontal"
+                android:id="@+id/glContainerInnerVerticalMiddle"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.58"
+                android:id="@+id/glCategoryNameBottom"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95"
+                android:id="@+id/glNumOfQuestionsBottom"/>
+            <!--    end of inner guidelines  -->
+
+        <!--    category name -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/glCategoryNameTop"
+            app:layout_constraintBottom_toBottomOf="@id/glCategoryNameBottom"
+            app:layout_constraintLeft_toRightOf="@id/glCategoryNameLeft"
+            app:layout_constraintRight_toLeftOf="@+id/glCategoryNameRight"
+            android:hint="@string/txtViewCategoryName"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:maxLength="20"
+            android:id="@+id/txtViewCategoryName"/>
+        <!--    end of category name -->
+
+        <!--    number of questions -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/txtViewCategoryName"
+            app:layout_constraintBottom_toTopOf="@id/glNumOfQuestionsBottom"
+            app:layout_constraintLeft_toRightOf="@id/glCategoryNameLeft"
+            app:layout_constraintRight_toLeftOf="@+id/glCategoryNameRight"
+            android:hint="@string/txtViewNumberOfQuestions"
+            android:textColorHint="@color/purple_700"
+            android:textColor="@color/purple_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/txtViewNumberOfQuestions"/>
+        <!--    end of number of questions -->
+
+        <!--    checked -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/glContainerInnerVerticalMiddle"
+            app:layout_constraintBottom_toTopOf="@+id/glContainerInnerVerticalMiddle"
+            app:layout_constraintLeft_toRightOf="@id/glCheckedVerticalLeft"
+            app:layout_constraintRight_toLeftOf="@id/glCheckedVerticalRight"
+            android:background="@drawable/square"
+            android:id="@+id/imgViewCheck"
+            tools:ignore="ContentDescription" />
+        <!--    end of checked -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--    end of inner cl for name, number and img  -->
+
+        <!--    category image -->
+        <ImageView
+            android:id="@+id/imgViewCategoryImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/category_3"
+            app:layout_constraintBottom_toTopOf="@id/glImageBottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/glImageRight"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+        <!--    end of category image   -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    end of outer constraint layout for category  -->
+</androidx.constraintlayout.widget.ConstraintLayout>
