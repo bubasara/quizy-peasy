@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.databinding.FragmentGameplayBinding
 
-class GamePlayFragment : Fragment(R.layout.fragment_gameplay) {
+class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
     private var _binding : FragmentGameplayBinding? = null
     private val binding get() = _binding!!
