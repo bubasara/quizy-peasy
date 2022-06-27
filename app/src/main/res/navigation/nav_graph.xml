@@ -30,7 +30,11 @@
         android:id="@+id/howToPlayDialog"
         android:name="bubasara.quizypeasy.dialogs.HowToPlayDialog"
         android:label="HowToPlayDialog"
-        tools:layout="@layout/dialog_how_to_play"/>
+        tools:layout="@layout/dialog_how_to_play">
+        <action
+            android:id="@+id/action_howToPlayDialog_to_chooseCategoriesFragment"
+            app:destination="@id/chooseCategoriesFragment" />
+    </dialog>
     <fragment
         android:id="@+id/chooseCategoriesFragment"
         android:name="bubasara.quizypeasy.fragments.ChooseCategoriesFragment"

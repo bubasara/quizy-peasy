@@ -130,7 +130,7 @@
         android:background="@color/purple_500"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:id="@+id/btnAddNewCategories"/>
+        android:id="@+id/btnCreateNewCategory"/>
     <!--    end of add new category    -->
 
     <!--    play    -->
