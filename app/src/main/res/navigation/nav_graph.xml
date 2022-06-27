@@ -96,7 +96,11 @@
         android:id="@+id/createNewQuestionFragment"
         android:name="bubasara.quizypeasy.dialogs.CreateNewQuestionFragment"
         android:label="CreateNewQuestionFragment"
-        tools:layout="@layout/dialog_create_new_question"/>
+        tools:layout="@layout/dialog_create_new_question">
+        <action
+            android:id="@+id/action_createNewQuestionFragment_to_createNewCategoryFragment"
+            app:destination="@id/createNewCategoryFragment" />
+    </dialog>
     <dialog
         android:id="@+id/editDeleteQuestionDialog"
         android:name="bubasara.quizypeasy.dialogs.EditDeleteQuestionDialog"

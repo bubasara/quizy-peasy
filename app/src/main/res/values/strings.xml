@@ -11,7 +11,7 @@
     <string name="txtViewCreateNewCategory">Create New Category</string>
     <string name="btnCreateCategory">Create Category</string>
     <string name="txtViewCategoryName">Category Name</string>
-    <string name="question">Add Question</string>
+    <string name="btnAddQuestion">Add Question</string>
     <string name="txtViewCreateNewQuestion">Create New Question</string>
     <string name="txtViewA">A</string>
     <string name="txtViewB">B</string>

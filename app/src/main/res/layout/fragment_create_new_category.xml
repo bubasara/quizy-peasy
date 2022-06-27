@@ -167,11 +167,11 @@
         app:layout_constraintBottom_toTopOf="@id/glMiddleHorizontal"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
-        android:text="@string/question"
+        android:text="@string/btnAddQuestion"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:background="@color/purple_500"
-        android:id="@+id/txtViewQuestion"/>
+        android:id="@+id/btnAddQuestion"/>
     <!--    end of button question   -->
 
     <!--    recycler view with questions   -->
@@ -201,7 +201,7 @@
         android:background="@color/purple_500"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:id="@+id/btnPlay"/>
+        android:id="@+id/btnCreateCategory"/>
     <!--    end of button create new category  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
