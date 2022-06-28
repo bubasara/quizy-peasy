@@ -72,7 +72,7 @@ class CreateNewCategoryAdapter(var context : Context)
         return CreateNewCategoryAdapter.ViewHolder(view)
     }
 
-    //
+    //  binding elements with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val question = listOfQuestions[position]
 
