@@ -1,6 +1,7 @@
 package bubasara.quizypeasy.viewmodels
 
 import androidx.lifecycle.ViewModel
+import bubasara.quizypeasy.models.Question
 
 class CreateNewCategoryViewModel : ViewModel() {
 
@@ -8,7 +9,9 @@ class CreateNewCategoryViewModel : ViewModel() {
         arraylist consists of
         Map < Map <question, list of answers>, correct answer >
      */
-    var listOfQuestions = arrayListOf<Map<Map<String, ArrayList<String>>, Int>>()
+    /*var listOfQuestions = arrayListOf<Map<Map<String, ArrayList<String>>, Int>>()*/
+
+    var listOfQuestions = arrayListOf<Question>()
 
     //for testing purposes, delete later
     init {
@@ -16,7 +19,7 @@ class CreateNewCategoryViewModel : ViewModel() {
     }
 
     private fun makeTestingListOfQuestions(){
-        var tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
+       /* var tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
         var tempQuestion = "Question no 1"
         var tempHashMap = hashMapOf(Pair(tempQuestion, tempArrayList))
         listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))
@@ -29,6 +32,11 @@ class CreateNewCategoryViewModel : ViewModel() {
         tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
         tempQuestion = "Question no 3"
         tempHashMap = hashMapOf(Pair(tempQuestion, tempArrayList))
-        listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))
+        listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))*/
+
+        listOfQuestions.add(Question("Question no 1", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), 1))
+        listOfQuestions.add(Question("Question no 2", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), 2))
+        listOfQuestions.add(Question("Question no 3", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), 3))
+        listOfQuestions.add(Question("Question no 4", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), 4))
     }
 }
