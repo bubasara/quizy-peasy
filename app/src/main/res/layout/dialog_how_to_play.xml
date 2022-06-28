@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dialogs.HowToPlayDialog">
 
     <!--    guidelines  -->
     <androidx.constraintlayout.widget.Guideline
@@ -55,12 +56,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.8"/>
     <!--    end of guidelines  -->
-
-    <!--    todo delete temp    -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_main"/>
 
     <!--    dialog  -->
     <!--    todo font family    -->
