@@ -26,7 +26,6 @@
 
     <!--    outer constraint layout for category  -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/categoryContainerOuter"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="10dp"
@@ -34,7 +33,8 @@
         android:autoSizeMaxTextSize="30sp"
         app:layout_constraintTop_toBottomOf="@id/glContainerOuterTop"
         app:layout_constraintBottom_toBottomOf="@id/glContainerOuterBottom"
-        tools:targetApi="o">
+        tools:targetApi="o"
+        android:id="@+id/clCategoryContainerOuter">
 
         <!--    outer guidelines  -->
         <androidx.constraintlayout.widget.Guideline
@@ -79,7 +79,7 @@
             app:layout_constraintLeft_toRightOf="@id/glContainerOuterLeft"
             app:layout_constraintRight_toRightOf="@id/glContainerOuterRight"
             android:background="@color/white"
-            android:id="@+id/categoryContainerInner">
+            android:id="@+id/clCategoryContainerInner">
 
             <!--    inner guidelines  -->
             <androidx.constraintlayout.widget.Guideline
