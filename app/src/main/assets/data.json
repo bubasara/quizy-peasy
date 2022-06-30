@@ -1,0 +1,69 @@
+[
+  {
+    "categoryName" : "Maths",
+    "numberOfQuestions" : 3,
+    "isChecked" : true,
+    "listOfQuestions" : [
+      {
+        "question": "Which 3 numbers have the same answer whether they’re added or multiplied together?",
+        "listOfAnswers": [
+          "1, 2, 3",
+          "-1, 2, 3",
+          "3, 5, 8",
+          "2, 10, 100"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "question": "The day before yesterday I was 25. The next year I will be 28. This is true only one day in a year. What day is my Birthday?",
+        "listOfAnswers": [
+          "February 28th",
+          "December 31rd",
+          "February 29th",
+          "January 1st"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "question": " Look at this series: 22, 21, 23, 22, 24, 23, … What number should come next?",
+        "listOfAnswers": [
+          "22",
+          "21",
+          "25",
+          "26"
+        ],
+        "correctAnswer": 3
+      }
+    ],
+    "imgCategory" : 2
+  },
+
+  {
+    "categoryName" : "Geography",
+    "numberOfQuestions" : 2,
+    "isChecked" : true,
+    "listOfQuestions" : [
+      {
+        "question": "Which is the capital of Serbia",
+        "listOfAnswers": [
+          "Niš",
+          "Novi Sad",
+          "Kragujevac",
+          "Belgrade"
+        ],
+        "correctAnswer": 4
+      },
+      {
+        "question": "Which is the highest peak of Suva Mountain",
+        "listOfAnswers": [
+          "Sokolov kamen",
+          "Trem",
+          "Mosor",
+          "Midžor"
+        ],
+        "correctAnswer": 2
+      }
+    ],
+    "imgCategory" : 3
+  }
+]
