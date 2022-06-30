@@ -3,11 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/purple_500">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--    guidelines  -->
 
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"
+        android:id="@+id/glLeft"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"
+        android:id="@+id/glRight"/>
+    <!--    end of guidelines  -->
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -27,12 +40,15 @@
     <!--    outer constraint layout for category  -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:autoSizeTextType="uniform"
         android:autoSizeMaxTextSize="30sp"
-        app:layout_constraintTop_toBottomOf="@id/glContainerOuterTop"
-        app:layout_constraintBottom_toBottomOf="@id/glContainerOuterBottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/glLeft"
+        app:layout_constraintRight_toRightOf="@id/glRight"
+
         tools:targetApi="o"
         android:id="@+id/clCategoryContainerOuter">
 
@@ -75,10 +91,11 @@
             android:autoSizeTextType="uniform"
             android:autoSizeMaxTextSize="30sp"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/glContainerOuterLeft"
             app:layout_constraintRight_toRightOf="@id/glContainerOuterRight"
-            android:background="@color/white"
+            android:background="@drawable/round_purple_container"
             android:id="@+id/clCategoryContainerInner">
 
             <!--    inner guidelines  -->
@@ -150,7 +167,7 @@
             app:layout_constraintRight_toLeftOf="@+id/glCategoryNameRight"
             android:hint="@string/txtViewCategoryName"
             android:textColorHint="@color/black"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
             android:maxLength="20"
@@ -167,7 +184,7 @@
             app:layout_constraintRight_toLeftOf="@+id/glCategoryNameRight"
             android:hint="@string/txtViewNumberOfQuestions"
             android:textColorHint="@color/purple_700"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             android:id="@+id/txtViewNumberOfQuestions"/>
