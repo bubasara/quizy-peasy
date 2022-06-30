@@ -12,8 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.models.Category
 
-class ChooseCategoriesAdapter (var context: Context)
+class ChooseCategoriesAdapter (var context: Context, val interfaceListener : ChooseCategoriesAdapterInterface)
     : RecyclerView.Adapter<ChooseCategoriesAdapter.ViewHolder> () {
+
+    //  using interface to notify of any change
+    interface ChooseCategoriesAdapterInterface {
+        fun longClickOnCategory(position: Int)
+        fun clickOnIsChecked()
+    }
 
     //  creating list of categories
     var listOfCategories = ArrayList<Category>()
@@ -79,19 +85,46 @@ class ChooseCategoriesAdapter (var context: Context)
         holder.getTxtViewCategoryName().text = category.categoryName
         holder.getTxtViewNumberOfQuestions().text = "${category.numberOfQuestions} questions"
         holder.getImgViewCheck().tag = R.drawable.square
-        holder.getImgViewCategoryImage().setImageDrawable(ContextCompat.getDrawable(
+        /*holder.getImgViewCategoryImage().setImageDrawable(ContextCompat.getDrawable(
             holder.getImgViewCategoryImage().context, category.imgCategory
-        ))
-        //  todo check/uncheck category
+        ))*/
 
+        val imgCategory = holder.getImgViewCategoryImage().context.resources.getIdentifier(
+            "category_${category.imgCategory}", "drawable", holder.getImgViewCategoryImage().context.packageName
+        )
+
+        holder.getImgViewCategoryImage().setImageDrawable(ContextCompat.getDrawable(
+            holder.getImgViewCategoryImage().context, imgCategory
+        ))
+
+        //  check/uncheck category
+        if (category.isChecked) {
+            holder.getImgViewCheck().setBackgroundResource(R.drawable.checked)
+        }
+
+        holder.getImgViewCheck().setOnClickListener {
+
+            if (category.isChecked) {
+                it.setBackgroundResource(R.drawable.square)
+                category.isChecked = false
+            } else {
+                it.setBackgroundResource(R.drawable.checked)
+                category.isChecked = true
+            }
+
+            interfaceListener.clickOnIsChecked()
+        }
+
+        //  catch long click on category
         holder.getClCategoryContainerOuter().setOnLongClickListener {
-            //  todo on long click -> delete category
+            interfaceListener.longClickOnCategory(position)
             true
         }
     }
 
-    fun deleteItem(){
-        //  todo
+    fun deleteItem(position: Int){
+        listOfCategories.removeAt(position)
+        notifyItemRemoved(position)
     }
 
     //  num of items for recyclerview
