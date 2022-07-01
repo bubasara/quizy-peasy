@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken
 //  shared view model among all fragments, separated by relations (fragment1 - fragment2)
 class SharedViewModel(application : Application) : AndroidViewModel(application) {
 
-    /*  CreateNewCategory - ChooseCategories    */
+    /*  SVM: CreateNewCategory - ChooseCategories    */
     private var newCategory : Category? = null
 
     //  newCategory setter
@@ -24,7 +24,12 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
         return newCategory
     }
 
-    /*  end of CreateNewCategory - ChooseCategories    */
+    fun resetNewCategory(){
+        newCategory = null
+    }
+
+    /*  end of SVM: CreateNewCategory - ChooseCategories    */
+    /*  SVM: Choose Categories - Gameplay  */
 
     /*  data.json   */
     var listOfCategories = arrayListOf<Category>()
@@ -37,4 +42,8 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
         val list = object : TypeToken<List<Category>>() {}.type
         listOfCategories = Gson().fromJson(json, list)
     }
+
+    /*  end of SVM: Choose Categories - Gameplay  */
+
+
 }

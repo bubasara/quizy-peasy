@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.adapters.ChooseCategoriesAdapter
 import bubasara.quizypeasy.databinding.FragmentChooseCategoriesBinding
+import bubasara.quizypeasy.helpers.PreferenceManager
 import bubasara.quizypeasy.viewmodels.ChooseCategoriesViewModel
 import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
 
-    val viewModel : ChooseCategoriesViewModel by viewModels()
-    val sharedViewModel : SharedViewModel by activityViewModels()
+    private val viewModel : ChooseCategoriesViewModel by viewModels()
+    private val sharedViewModel : SharedViewModel by activityViewModels()
 
     private lateinit var chooseCategoriesAdapter : ChooseCategoriesAdapter
     private var hasCategoryCheckStateChanged = false
@@ -31,14 +32,13 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentChooseCategoriesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         //todo click on category -> checked
 
@@ -68,8 +68,12 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
         if(sharedViewModel.getNewCategory() != null) {
             viewModel.listOfCategories.add(sharedViewModel.getNewCategory()!!)
             chooseCategoriesAdapter.notifyDataSetChanged()
-            
+
+            PreferenceManager.setListOfCategories(viewModel.listOfCategories)
+            sharedViewModel.resetNewCategory()
         }
+
+        //  todo  delete category
 
         //click on Create new category button -> go to Create New Category fragment
         binding.btnCreateNewCategory.setOnClickListener {
@@ -78,7 +82,16 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
 
         //click on Play button -> go to Gameplay fragment
         binding.btnPlay.setOnClickListener {
+            //  todo svm list of questions for chosen categories
             findNavController().navigate(R.id.action_chooseCategoriesFragment_to_gamePlayFragment)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        //  if category checked/unchecked
+        if (hasCategoryCheckStateChanged) {
+            PreferenceManager.setListOfCategories(viewModel.listOfCategories)
         }
     }
 
