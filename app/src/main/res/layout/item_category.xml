@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--    guidelines  -->
@@ -95,7 +95,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/glContainerOuterLeft"
             app:layout_constraintRight_toRightOf="@id/glContainerOuterRight"
-            android:background="@drawable/round_purple_container"
+            android:background="@drawable/category_bg"
             android:id="@+id/clCategoryContainerInner">
 
             <!--    inner guidelines  -->

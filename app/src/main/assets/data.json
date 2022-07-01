@@ -1,5 +1,34 @@
 [
   {
+    "categoryName" : "Geography",
+    "numberOfQuestions" : 2,
+    "isChecked" : true,
+    "listOfQuestions" : [
+      {
+        "question": "Which is the capital of Serbia",
+        "listOfAnswers": [
+          "Niš",
+          "Novi Sad",
+          "Kragujevac",
+          "Belgrade"
+        ],
+        "correctAnswer": 4
+      },
+      {
+        "question": "Which is the highest peak of Suva Mountain",
+        "listOfAnswers": [
+          "Sokolov kamen",
+          "Trem",
+          "Mosor",
+          "Midžor"
+        ],
+        "correctAnswer": 2
+      }
+    ],
+    "imgCategory" : 1
+  },
+
+  {
     "categoryName" : "Maths",
     "numberOfQuestions" : 3,
     "isChecked" : true,
@@ -39,31 +68,32 @@
   },
 
   {
-    "categoryName" : "Geography",
+    "categoryName" : "Gaming",
     "numberOfQuestions" : 2,
     "isChecked" : true,
     "listOfQuestions" : [
       {
-        "question": "Which is the capital of Serbia",
+        "question": "What does the WoW stand for?",
         "listOfAnswers": [
-          "Niš",
-          "Novi Sad",
-          "Kragujevac",
-          "Belgrade"
+          "Wondering of Whales",
+          "World of Warcraft",
+          "World of Tanks",
+          "World of Warriors"
         ],
-        "correctAnswer": 4
+        "correctAnswer": 2
       },
       {
-        "question": "Which is the highest peak of Suva Mountain",
+        "question": "Which is not a version of Counter-Strike",
         "listOfAnswers": [
-          "Sokolov kamen",
-          "Trem",
-          "Mosor",
-          "Midžor"
+          "Counter-Strike 1.6",
+          "Counter-Strike: Global Offensive",
+          "Half-Life: Counter-Strike",
+          "Counter-Strike: Mission Impossible"
         ],
         "correctAnswer": 2
       }
     ],
-    "imgCategory" : 3
+    "imgCategory" : 1
   }
+
 ]
