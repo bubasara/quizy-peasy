@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -220,6 +221,7 @@
             android:inputType="text"
             android:background="@color/purple_700"
             android:labelFor="@+id/txtViewA"
+            android:autofillHints="Answer A"
             android:id="@+id/editTxtA"/>
         <!--    end of answer A  -->
 
@@ -234,7 +236,7 @@
             android:textColor="@color/purple_700"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:id="@+id/txtViewB"/>/>
+            android:id="@+id/txtViewB"/>
         <!--    end of B   -->
 
         <!--    answer B -->
@@ -256,6 +258,7 @@
             android:inputType="text"
             android:background="@color/purple_700"
             android:labelFor="@+id/txtViewB"
+            android:autofillHints="Answer B"
             android:id="@+id/editTxtB"/>
         <!--    end of answer B  -->
 
@@ -270,7 +273,7 @@
             android:textColor="@color/purple_500"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:id="@+id/txtViewC"/>/>
+            android:id="@+id/txtViewC"/>
         <!--    end of C   -->
 
         <!--    answer C -->
@@ -292,6 +295,7 @@
             android:inputType="text"
             android:background="@color/purple_700"
             android:labelFor="@+id/txtViewC"
+            android:autofillHints="Answer C"
             android:id="@+id/editTxtC"/>
         <!--    end of answer C  -->
 
@@ -306,7 +310,7 @@
             android:textColor="@color/purple_700"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:id="@+id/txtViewD"/>/>
+            android:id="@+id/txtViewD"/>
         <!--    end of D   -->
 
         <!--    answer D -->
@@ -328,17 +332,57 @@
             android:inputType="text"
             android:background="@color/purple_700"
             android:labelFor="@+id/txtViewD"
+            android:autofillHints="Answer D"
             android:id="@+id/editTxtD"/>
         <!--    end of answer D  -->
+
+        <!--    correct answer text view   -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerDBottom"
+            app:layout_constraintBottom_toTopOf="@id/glCreateTop"
+            app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
+            android:text="@string/txtViewCorrectAnswer"
+            android:paddingRight="10dp"
+            android:textColor="@color/purple_500"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/txtCorrectAnswer"/>
+        <!--    end of correct answer text view    -->
+
+        <!--    correct answer edit text    -->
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            app:layout_constraintTop_toBottomOf="@id/glAnswerDBottom"
+            app:layout_constraintBottom_toTopOf="@id/glCreateTop"
+            app:layout_constraintLeft_toRightOf="@id/txtCorrectAnswer"
+            app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:background="@color/purple_500"
+            android:labelFor="@+id/txtViewD"
+            android:autofillHints="Answer D"
+            android:id="@+id/editTxtCorrectAnswer"/>
+        <!--    end correct answer edit text  -->
 
         <!--    save    -->
         <Button
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/glCreateTop"
-            app:layout_constraintBottom_toTopOf="@id/glCreateBottom"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             app:layout_constraintRight_toLeftOf="@id/glMiddleVertical"
+            android:layout_marginTop="10dp"
             android:text="@string/btnSave"
             android:background="@color/purple_500"
             android:textColor="@color/white"
@@ -351,9 +395,10 @@
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/glCreateTop"
-            app:layout_constraintBottom_toTopOf="@id/glCreateBottom"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/glMiddleVertical"
             app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
+            android:layout_marginTop="10dp"
             android:text="@string/btnDelete"
             android:background="@color/purple_500"
             android:textColor="@color/white"
