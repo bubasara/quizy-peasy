@@ -45,5 +45,25 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
 
     /*  end of SVM: Choose Categories - Gameplay  */
 
+    /*  SVM: Create New Category - Choose Categories    */
+    private var newQuestion : Question? = null
+
+    //  getter
+    fun getNewQuestion() : Question? {
+        return newQuestion
+    }
+
+    //  setter
+    fun setNewQuestion(question: Question){
+        newQuestion = question
+    }
+
+    //  reset EditText when question submitted
+    fun resetNewQuestion(){
+        newQuestion = null
+    }
+
+
+    /*  end of SVM: Create New Category - Choose Categories    */
 
 }
