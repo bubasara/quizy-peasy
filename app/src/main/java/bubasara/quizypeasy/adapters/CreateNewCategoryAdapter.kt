@@ -4,13 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.models.Question
 
-class CreateNewCategoryAdapter(var context : Context)
+class CreateNewCategoryAdapter(var context : Context, private val interfaceListener : CreateNewCategoryInterface)
     : RecyclerView.Adapter<CreateNewCategoryAdapter.ViewHolder>() {
 
     //  creating list of questions
@@ -20,27 +22,32 @@ class CreateNewCategoryAdapter(var context : Context)
         this.listOfQuestions = listOfQuestions
     }
 
+    //  interface for long click on question -> open edit/delete dialog
+    interface CreateNewCategoryInterface {
+        fun longClickOnQuestion(position: Int)
+    }
+
     //  elements in recyclerview (item gameplay)
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val clQuestionContainer : ConstraintLayout
         private val txtViewQuestionContent : TextView
         private val txtViewAnswers : TextView
-        private val txtViewAnswerA : TextView
-        private val txtViewAnswerB : TextView
-        private val txtViewAnswerC : TextView
-        private val txtViewAnswerD : TextView
+        private val btnAnswerA : Button
+        private val btnAnswerB : Button
+        private val btnAnswerC : Button
+        private val btnAnswerD : Button
 
         init {
             clQuestionContainer = view.findViewById(R.id.constraintLayoutQuestionContainer)
             txtViewQuestionContent = view.findViewById(R.id.txtViewQuestionContent)
             txtViewAnswers = view.findViewById(R.id.txtViewAnswers)
-            txtViewAnswerA = view.findViewById(R.id.txtViewA)
-            txtViewAnswerB = view.findViewById(R.id.txtViewB)
-            txtViewAnswerC = view.findViewById(R.id.txtViewC)
-            txtViewAnswerD = view.findViewById(R.id.txtViewD)
+            btnAnswerA = view.findViewById(R.id.btnAnswerA)
+            btnAnswerB = view.findViewById(R.id.btnAnswerB)
+            btnAnswerC = view.findViewById(R.id.btnAnswerC)
+            btnAnswerD = view.findViewById(R.id.btnAnswerD)
         }
 
-        //  getters
+        /*  getters */
         fun getClQuestionContainer() : ConstraintLayout {
             return clQuestionContainer
         }
@@ -49,27 +56,29 @@ class CreateNewCategoryAdapter(var context : Context)
             return txtViewQuestionContent
         }
 
-        fun getTxtViewAnswerA() : TextView {
-            return txtViewAnswerA
+        fun getBtnAnswerA() : Button {
+            return btnAnswerA
         }
 
-        fun getTxtViewAnswerB() : TextView {
-            return txtViewAnswerB
+        fun getBtnAnswerB() : Button {
+            return btnAnswerB
         }
 
-        fun getTxtViewAnswerC() : TextView {
-            return txtViewAnswerC
+        fun getBtnAnswerC() : Button {
+            return btnAnswerC
         }
 
-        fun getTxtViewAnswerD() : TextView {
-            return txtViewAnswerD
+        fun getBtnAnswerD() : Button {
+            return btnAnswerD
         }
+        /*  end of getters */
+
     }
 
     //  inflate item layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_gameplay, parent,false)
-        return CreateNewCategoryAdapter.ViewHolder(view)
+        return ViewHolder(view)
     }
 
     //  binding elements with data
@@ -81,7 +90,7 @@ class CreateNewCategoryAdapter(var context : Context)
 
         //  on long click -> edit/delete question
         holder.getClQuestionContainer().setOnLongClickListener {
-            //  todo
+            interfaceListener.longClickOnQuestion(position)
             true
         }
     }
@@ -91,12 +100,15 @@ class CreateNewCategoryAdapter(var context : Context)
         return listOfQuestions.size
     }
 
-    //  todo
-    fun editItem(){
-
+    //  set new (edit) text for question on clicked position
+    fun editItem(position: Int, questionContent: String){
+        listOfQuestions[position].question = questionContent
+        notifyItemChanged(position)
     }
 
-    fun deleteItem(){
-
+    //  delete question on clicked position
+    fun deleteItem(position: Int){
+        listOfQuestions.removeAt(position)
+        notifyItemRemoved(position)
     }
 }
