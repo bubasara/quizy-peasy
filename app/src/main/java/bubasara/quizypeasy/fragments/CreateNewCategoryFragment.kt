@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -79,19 +80,35 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
             findNavController().navigate(R.id.action_createNewCategoryFragment_to_createNewQuestionFragment)
         }
 
-         //click on Create category button -> go back to Choose Categories fragment
+        //click on Create category button -> go back to Choose Categories fragment
         binding.btnCreateCategory.setOnClickListener {
 
-            //  getting data for category
-            val imgNum = imgNum
-            val categoryName = binding.editTxtCategoryName.text.toString()
-            val numberOfQuestions = adapter.listOfQuestions.size
-            val listOfQuestions = adapter.listOfQuestions
+            //  validation
+            if(binding.editTxtCategoryName.text.isNotEmpty() && binding.editTxtCategoryName.text.isNotBlank()
+                && binding.editTxtCategoryName.text !== null){
 
-            //  creating category with
-            sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, listOfQuestions, imgNum)
+                //  getting data for category
+                val imgNum = imgNum
+                val categoryName = binding.editTxtCategoryName.text.toString()
+                val numberOfQuestions = adapter.listOfQuestions.size
+                val listOfQuestions = adapter.listOfQuestions
 
-            findNavController().popBackStack()
+                //  creating category with collected data
+                sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, listOfQuestions, imgNum)
+
+                findNavController().popBackStack()
+
+            //  if category has no questions
+            } else if (adapter.listOfQuestions.size == 0) {
+                Toast.makeText(requireContext(), "Category must not be empty. Please add a question.",
+                    Toast.LENGTH_SHORT).show()
+
+            //  if category has no name
+            } else {
+                Toast.makeText(requireContext(), "Category name must not be blank...",
+                    Toast.LENGTH_SHORT).show()
+            }
+
         }
 
     }
