@@ -46,18 +46,6 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //todo click on Add Question
-        //click on Add question button -> go to Create New Question fragment
-        binding.btnAddQuestion.setOnClickListener {
-            findNavController().navigate(R.id.action_createNewCategoryFragment_to_createNewQuestionFragment)
-        }
-
-        //todo click on Create Category
-        //click on Create category button -> go back to Choose Categories fragment
-        binding.btnCreateCategory.setOnClickListener {
-            findNavController().navigate(R.id.action_createNewCategoryFragment_to_chooseCategoriesFragment)
-        }
-
         /*  adding random image */
         //  todo user can choose img; add more pics
         imgViewCategoryImg = binding.imgViewCategoryImage
@@ -81,10 +69,30 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
 
         /*  recyclerView for questions  */
         val recyclerViewQuestions = binding.recyclerViewQuestions
-        adapter.setListOfQuestions(viewModel.listOfQuestions as ArrayList<Question>)
+        adapter.setListOfQuestions(viewModel.listOfQuestions)
         recyclerViewQuestions.layoutManager = GridLayoutManager(context, 2) //two columns
         recyclerViewQuestions.adapter = adapter
         /*  end of recyclerView for questions   */
+
+        //click on Add question button -> go to Create New Question fragment
+        binding.btnAddQuestion.setOnClickListener {
+            findNavController().navigate(R.id.action_createNewCategoryFragment_to_createNewQuestionFragment)
+        }
+
+         //click on Create category button -> go back to Choose Categories fragment
+        binding.btnCreateCategory.setOnClickListener {
+
+            //  getting data for category
+            val imgNum = imgNum
+            val categoryName = binding.editTxtCategoryName.text.toString()
+            val numberOfQuestions = adapter.listOfQuestions.size
+            val listOfQuestions = adapter.listOfQuestions
+
+            //  creating category with
+            sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, listOfQuestions, imgNum)
+
+            findNavController().popBackStack()
+        }
 
     }
 
