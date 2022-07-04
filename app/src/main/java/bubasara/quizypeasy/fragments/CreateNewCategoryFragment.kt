@@ -1,7 +1,6 @@
 package bubasara.quizypeasy.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,18 +10,18 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.adapters.CreateNewCategoryAdapter
 import bubasara.quizypeasy.databinding.FragmentCreateNewCategoryBinding
-import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModel
 import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category) {
 
-    val viewModel : CreateNewCategoryViewModel by viewModels()
+    private val viewModel : CreateNewCategoryViewModel by viewModels()
     val sharedViewModel : SharedViewModel by activityViewModels()
 
     private var _binding : FragmentCreateNewCategoryBinding? = null
@@ -109,6 +108,29 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
                     Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        /*  observer for editing question
+            when question is edited, observer transfers new data from dialog to recyclerView    */
+        sharedViewModel.questionEditLiveDataBoolean.observe(viewLifecycleOwner) {
+            if (it) {
+                adapter.editItem(
+                    editDeleteAtThisPosition,
+                    sharedViewModel.getNewQuestion()!!.question
+                )
+                sharedViewModel.questionEditLiveDataBoolean.value = false
+                adapter.notifyItemChanged(editDeleteAtThisPosition)
+            }
+        }
+
+        /*  observer for deleting question
+            when question is deleted, observer deletes old data from recyclerView    */
+        sharedViewModel.questionDeleteLiveDataBoolean.observe(viewLifecycleOwner) {
+            if (it) {
+                adapter.deleteItem(editDeleteAtThisPosition)
+                sharedViewModel.questionDeleteLiveDataBoolean.value = false
+                adapter.notifyItemRemoved(editDeleteAtThisPosition)
+            }
         }
 
     }

@@ -2,6 +2,7 @@ package bubasara.quizypeasy.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import bubasara.quizypeasy.models.Category
 import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.utils.getJsonDataFromAsset
@@ -28,6 +29,9 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
         newCategory = null
     }
 
+    //  live data for deleting category
+    var categoryDeleteLiveDataBoolean : MutableLiveData<Boolean> = MutableLiveData()
+
     /*  end of SVM: CreateNewCategory - ChooseCategories    */
     /*  SVM: Choose Categories - Gameplay  */
 
@@ -45,7 +49,7 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
 
     /*  end of SVM: Choose Categories - Gameplay  */
 
-    /*  SVM: Create New Category - Choose Categories    */
+    /*  SVM: Create New Category - EditDeleteQuestion    */
     private var newQuestion : Question? = null
 
     //  getter
@@ -63,7 +67,9 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
         newQuestion = null
     }
 
+    var questionDeleteLiveDataBoolean: MutableLiveData<Boolean> = MutableLiveData()
+    var questionEditLiveDataBoolean: MutableLiveData<Boolean> = MutableLiveData()
 
-    /*  end of SVM: Create New Category - Choose Categories    */
+    /*  end of SVM: Create New Category - EditDeleteQuestion    */
 
 }
