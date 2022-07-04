@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import bubasara.quizypeasy.R
@@ -40,20 +41,21 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //todo click on category -> checked
-
         viewModel.listOfCategories = sharedViewModel.listOfCategories
 
         val recyclerViewCategories = binding.recyclerViewCategories
 
-        //  long click on category -> delete dialog
+
         this.chooseCategoriesAdapter = ChooseCategoriesAdapter(requireContext(),
             object : ChooseCategoriesAdapter.ChooseCategoriesAdapterInterface{
+
+                //  long click on category -> delete dialog
                 override fun longClickOnCategory(position: Int) {
                     deletePosition = position
                     findNavController().navigate(R.id.action_chooseCategoriesFragment_to_deleteCategoryDialog)
                 }
 
+                //  click on category check square -> checked
                 override fun clickOnIsChecked() {
                     hasCategoryCheckStateChanged = true
                 }
@@ -73,7 +75,18 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
             sharedViewModel.resetNewCategory()
         }
 
-        //  todo  delete category
+        //  observer for deleting category
+        sharedViewModel.categoryDeleteLiveDataBoolean.observe(viewLifecycleOwner) {
+            if (it) {
+                chooseCategoriesAdapter.deleteItem(deletePosition)
+                PreferenceManager.setListOfCategories(viewModel.listOfCategories)
+                chooseCategoriesAdapter.notifyItemRemoved(deletePosition)
+                chooseCategoriesAdapter.notifyItemRangeChanged(
+                    deletePosition,
+                    viewModel.listOfCategories.size
+                )
+            }
+        }
 
         //click on Create new category button -> go to Create New Category fragment
         binding.btnCreateNewCategory.setOnClickListener {
