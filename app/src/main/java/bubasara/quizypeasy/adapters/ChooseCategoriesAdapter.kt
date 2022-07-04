@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.models.Category
 
-class ChooseCategoriesAdapter (var context: Context, val interfaceListener : ChooseCategoriesAdapterInterface)
+class ChooseCategoriesAdapter (var context: Context, private val interfaceListener : ChooseCategoriesAdapterInterface)
     : RecyclerView.Adapter<ChooseCategoriesAdapter.ViewHolder> () {
 
     //  using interface to notify of any change
