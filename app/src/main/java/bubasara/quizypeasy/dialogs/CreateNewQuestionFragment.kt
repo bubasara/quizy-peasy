@@ -65,7 +65,7 @@ class CreateNewQuestionFragment : DialogFragment(R.layout.dialog_create_new_ques
                     sharedViewModel.setNewQuestion(
                         Question(
                             editTxtQuestionContent,
-                            arrayListOf<String>(txtViewA, txtViewB, txtViewC, txtViewD), 1
+                            arrayListOf<String>(txtViewA, txtViewB, txtViewC, txtViewD), "A"
                         )
                     )
                 }
