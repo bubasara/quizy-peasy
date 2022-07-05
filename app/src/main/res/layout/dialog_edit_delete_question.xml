@@ -39,7 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_white_round"
-        android:id="@+id/clHowToPlayContainer"
+        android:id="@+id/clEditDeleteQuestionContainer"
         app:layout_constraintTop_toBottomOf="@id/glDialogTop"
         app:layout_constraintBottom_toTopOf="@id/glDialogBottom"
         app:layout_constraintLeft_toLeftOf="@id/glLeftVertical"
