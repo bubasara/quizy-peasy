@@ -343,7 +343,7 @@
             android:paddingRight="10dp"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:id="@+id/txtCorrectAnswer"/>
+            android:id="@+id/txtViewCorrectAnswer"/>
         <!--    end of correct answer text view    -->
 
         <!--    correct answer edit text    -->
@@ -356,7 +356,7 @@
             android:paddingRight="5dp"
             app:layout_constraintTop_toBottomOf="@id/glAnswerDBottom"
             app:layout_constraintBottom_toTopOf="@id/glCreateTop"
-            app:layout_constraintLeft_toRightOf="@id/txtCorrectAnswer"
+            app:layout_constraintLeft_toRightOf="@id/txtViewCorrectAnswer"
             app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
             android:maxLength="20"
             android:maxLines="1"
