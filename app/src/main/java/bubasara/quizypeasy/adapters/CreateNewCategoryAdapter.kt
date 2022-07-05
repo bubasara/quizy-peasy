@@ -36,8 +36,6 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
         private val btnAnswerB : Button
         private val btnAnswerC : Button
         private val btnAnswerD : Button
-        private var txtViewCorrectAnswer : TextView
-        private var editTxtCorrectAnswer : EditText
 
         init {
             clQuestionContainer = view.findViewById(R.id.constraintLayoutQuestionContainer)
@@ -47,8 +45,6 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
             btnAnswerB = view.findViewById(R.id.btnAnswerB)
             btnAnswerC = view.findViewById(R.id.btnAnswerC)
             btnAnswerD = view.findViewById(R.id.btnAnswerD)
-            txtViewCorrectAnswer = view.findViewById(R.id.txtViewCorrectAnswer)
-            editTxtCorrectAnswer = view.findViewById(R.id.editTxtCorrectAnswer)
         }
 
         /*  getters */
@@ -74,14 +70,6 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
 
         fun getBtnAnswerD() : Button {
             return btnAnswerD
-        }
-
-        fun getTxtViewCorrectAnswer() : TextView {
-            return txtViewCorrectAnswer
-        }
-
-        fun getEditTxtCorrectAnswer() : EditText {
-            return editTxtCorrectAnswer
         }
         /*  end of getters */
 
