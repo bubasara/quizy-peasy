@@ -87,6 +87,10 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
 
         //  question content
         holder.getTxtViewQuestionContent().text = question.question
+        holder.getBtnAnswerA().text = question.listOfAnswers[0]
+        holder.getBtnAnswerB().text = question.listOfAnswers[1]
+        holder.getBtnAnswerC().text = question.listOfAnswers[2]
+        holder.getBtnAnswerD().text = question.listOfAnswers[3]
 
         //  on long click -> edit/delete question
         holder.getClQuestionContainer().setOnLongClickListener {
@@ -101,8 +105,15 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     }
 
     //  set new (edit) text for question on clicked position
-    fun editItem(position: Int, questionContent: String){
+    fun editItem(position: Int, questionContent: String,
+                 answerA: String, answerB: String, answerC: String, answerD: String,
+                 correctAnswer : String){
         listOfQuestions[position].question = questionContent
+        listOfQuestions[position].listOfAnswers[0] = answerA
+        listOfQuestions[position].listOfAnswers[1] = answerB
+        listOfQuestions[position].listOfAnswers[2] = answerC
+        listOfQuestions[position].listOfAnswers[3] = answerD
+        listOfQuestions[position].correctAnswer = correctAnswer
         notifyItemChanged(position)
     }
 
@@ -110,5 +121,6 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     fun deleteItem(position: Int){
         listOfQuestions.removeAt(position)
         notifyItemRemoved(position)
+        notifyDataSetChanged()
     }
 }

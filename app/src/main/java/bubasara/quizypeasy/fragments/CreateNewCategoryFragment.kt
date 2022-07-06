@@ -69,7 +69,12 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
 
         /*  recyclerView for questions  */
         val recyclerViewQuestions = binding.recyclerViewQuestions
+        //sharedViewModel.getNewQuestion()?.let { adapter.listOfQuestions.add(it) }
         adapter.setListOfQuestions(viewModel.listOfQuestions)
+        if (sharedViewModel.getNewQuestion() != null){
+            adapter.listOfQuestions.add(sharedViewModel.getNewQuestion()!!)
+            adapter.notifyDataSetChanged()
+        }
         recyclerViewQuestions.layoutManager = GridLayoutManager(context, 2) //two columns
         recyclerViewQuestions.adapter = adapter
         /*  end of recyclerView for questions   */
@@ -83,10 +88,23 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
         binding.btnCreateCategory.setOnClickListener {
 
             //  validation
-            if(binding.editTxtCategoryName.text.isNotEmpty() && binding.editTxtCategoryName.text.isNotBlank()
-                && binding.editTxtCategoryName.text !== null){
+            //  if category has no name
+            if(binding.editTxtCategoryName.text.isEmpty() || binding.editTxtCategoryName.text.isBlank()
+                || binding.editTxtCategoryName.text == null){
 
-                //  getting data for category
+                Toast.makeText(requireContext(), "Category name must not be blank...",
+                    Toast.LENGTH_SHORT).show()
+
+            } //  if category has no questions
+            else if (adapter.listOfQuestions.size == 0) {
+                Toast.makeText(requireContext(), "Category must not be empty. Please add a question.",
+                    Toast.LENGTH_SHORT).show()
+            }
+
+
+            else { //  getting data for category
+//                adapter.listOfQuestions.add(sharedViewModel.getNewQuestion()!!)
+//                adapter.notifyDataSetChanged()
                 val imgNum = imgNum
                 val categoryName = binding.editTxtCategoryName.text.toString()
                 val numberOfQuestions = adapter.listOfQuestions.size
@@ -96,16 +114,6 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
                 sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, listOfQuestions, imgNum)
 
                 findNavController().popBackStack()
-
-            //  if category has no questions
-            } else if (adapter.listOfQuestions.size == 0) {
-                Toast.makeText(requireContext(), "Category must not be empty. Please add a question.",
-                    Toast.LENGTH_SHORT).show()
-
-            //  if category has no name
-            } else {
-                Toast.makeText(requireContext(), "Category name must not be blank...",
-                    Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -116,7 +124,12 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
             if (it) {
                 adapter.editItem(
                     editDeleteAtThisPosition,
-                    sharedViewModel.getNewQuestion()!!.question
+                    sharedViewModel.getNewQuestion()!!.question,
+                    sharedViewModel.getNewQuestion()!!.listOfAnswers[0],
+                    sharedViewModel.getNewQuestion()!!.listOfAnswers[1],
+                    sharedViewModel.getNewQuestion()!!.listOfAnswers[2],
+                    sharedViewModel.getNewQuestion()!!.listOfAnswers[3],
+                    sharedViewModel.getNewQuestion()!!.correctAnswer,
                 )
                 sharedViewModel.questionEditLiveDataBoolean.value = false
                 adapter.notifyItemChanged(editDeleteAtThisPosition)
