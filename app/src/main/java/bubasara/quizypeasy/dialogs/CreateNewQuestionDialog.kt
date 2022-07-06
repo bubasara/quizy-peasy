@@ -15,18 +15,23 @@ import bubasara.quizypeasy.databinding.DialogCreateNewQuestionBinding
 import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.viewmodels.SharedViewModel
 
-class CreateNewQuestionFragment : DialogFragment(R.layout.dialog_create_new_question) {
+class CreateNewQuestionDialog : DialogFragment(R.layout.dialog_create_new_question) {
 
     private var _binding : DialogCreateNewQuestionBinding? = null
     private val binding get() = _binding!!
 
     private val sharedViewModel : SharedViewModel by activityViewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL, R.style.full_screen_dialog)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = DialogCreateNewQuestionBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -47,10 +52,12 @@ class CreateNewQuestionFragment : DialogFragment(R.layout.dialog_create_new_ques
                         .isEmpty() || binding.editTxtC.text.toString().isBlank()
                     || binding.editTxtD.text.toString()
                         .isEmpty() || binding.editTxtD.text.toString().isBlank()
+                    || binding.editTxtCorrectAnswer.text.toString()
+                        .isEmpty() || binding.editTxtCorrectAnswer.text.toString().isBlank()
                 ) {
                     Toast.makeText(
                         requireContext(),
-                        "Neither the question or the answers can be blank. Please fill in the blanks.",
+                        "Neither the question, the answers nor the correct answer can be blank. Please fill in the blanks.",
                         Toast.LENGTH_LONG
                     )
                 } else {
@@ -60,16 +67,20 @@ class CreateNewQuestionFragment : DialogFragment(R.layout.dialog_create_new_ques
                     val txtViewB = binding.txtViewB.text.toString()
                     val txtViewC = binding.txtViewC.text.toString()
                     val txtViewD = binding.txtViewD.text.toString()
+                    val editTxtCorrectAnswer = binding.editTxtCorrectAnswer.text.toString()
 
                     //  creating question with collected data
                     sharedViewModel.setNewQuestion(
                         Question(
                             editTxtQuestionContent,
-                            arrayListOf<String>(txtViewA, txtViewB, txtViewC, txtViewD), "A"
+                            arrayListOf<String>(txtViewA, txtViewB, txtViewC, txtViewD), editTxtCorrectAnswer
                         )
                     )
+                    sharedViewModel.questionEditLiveDataBoolean.value = true
                 }
-                findNavController().navigate(R.id.action_createNewQuestionFragment_to_createNewCategoryFragment)
+
+                //  pop back stack instead of navigate
+                findNavController().popBackStack()
             }
         }
     }
