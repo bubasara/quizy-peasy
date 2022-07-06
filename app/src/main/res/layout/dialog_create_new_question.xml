@@ -71,15 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.35"
-            android:id="@+id/glQuestionContentBottom"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.4"
-            android:id="@+id/glAnswerATop"/>
+            android:id="@+id/glQuestionContentBottom"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:layout_width="match_parent"
@@ -191,7 +184,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/glAnswerATop"
+            app:layout_constraintTop_toBottomOf="@id/glQuestionContentBottom"
             app:layout_constraintBottom_toTopOf="@id/glAnswerBTop"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             android:text="@string/txtViewA"
@@ -209,7 +202,7 @@
             android:layout_marginBottom="15dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            app:layout_constraintTop_toBottomOf="@id/glAnswerATop"
+            app:layout_constraintTop_toBottomOf="@id/glQuestionContentBottom"
             app:layout_constraintBottom_toTopOf="@id/glAnswerBTop"
             app:layout_constraintLeft_toRightOf="@id/glAnswerLeft"
             app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
@@ -335,6 +328,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@id/glAnswerDBottom"
             app:layout_constraintBottom_toTopOf="@id/glCreateTop"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
@@ -351,7 +345,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             app:layout_constraintTop_toBottomOf="@id/glAnswerDBottom"
@@ -360,7 +353,7 @@
             app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
             android:maxLength="20"
             android:maxLines="1"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textColor="@color/white"
             android:inputType="text"
             android:background="@color/purple_500"
@@ -372,6 +365,7 @@
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/glCreateTop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"

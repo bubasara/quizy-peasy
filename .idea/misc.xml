@@ -7,15 +7,15 @@
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout-v26/item_category.xml" value="0.30842391304347827" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/activity_main.xml" value="0.3197463768115942" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/create_new_category_fragment.xml" value="0.25" />
-        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_create_new_question.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_create_new_question.xml" value="0.2" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_delete_category.xml" value="0.22" />
-        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_edit_delete_question.xml" value="0.30842391304347827" />
+        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_edit_delete_question.xml" value="0.18" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_how_to_play.xml" value="0.365625" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/dialog_leave.xml" value="0.23233695652173914" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_choose_categories.xml" value="0.25" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_create_new_category.xml" value="0.33" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_create_new_question.xml" value="0.33" />
-        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_gameplay.xml" value="0.18795289855072464" />
+        <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_gameplay.xml" value="0.22" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_homescreen.xml" value="0.3197463768115942" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_splashscreen.xml" value="0.3162162162162162" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/fragment_stats.xml" value="0.30842391304347827" />

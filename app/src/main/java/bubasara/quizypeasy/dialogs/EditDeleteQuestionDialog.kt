@@ -78,9 +78,6 @@ class EditDeleteQuestionDialog : DialogFragment(R.layout.dialog_edit_delete_ques
         editTxtD.setText(tempListOfAnswers[3])
         editTxtCorrectAnswer.setText(sharedViewModel.getNewQuestion()!!.correctAnswer)
 
-        //  todo apply this edits to create new question fragment
-        //  todo fix bug: on delete question
-
         //  click on button SAVE -> get data from fields and update the question
         binding.btnSave.setOnClickListener {
             sharedViewModel.setNewQuestion(Question(editTxtQuestionContent.text.toString(),

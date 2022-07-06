@@ -94,7 +94,7 @@
     </fragment>
     <dialog
         android:id="@+id/createNewQuestionFragment"
-        android:name="bubasara.quizypeasy.dialogs.CreateNewQuestionFragment"
+        android:name="bubasara.quizypeasy.dialogs.CreateNewQuestionDialog"
         android:label="CreateNewQuestionFragment"
         tools:layout="@layout/dialog_create_new_question">
         <action
