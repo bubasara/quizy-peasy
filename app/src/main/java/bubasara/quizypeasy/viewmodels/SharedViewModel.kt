@@ -4,10 +4,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import bubasara.quizypeasy.models.Category
-import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.utils.getJsonDataFromAsset
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import bubasara.quizypeasy.models.Question as Question
 
 //  shared view model among all fragments, separated by relations (fragment1 - fragment2)
 class SharedViewModel(application : Application) : AndroidViewModel(application) {
@@ -71,5 +71,11 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     var questionEditLiveDataBoolean: MutableLiveData<Boolean> = MutableLiveData()
 
     /*  end of SVM: Create New Category - EditDeleteQuestion    */
+
+    /*  SVM: Create New Category - Create New Question    */
+    fun addQuestionToCategory(question: Question){
+        newCategory?.listOfQuestions?.add(question)
+    }
+    /*  end of SVM: Create New Category - Create New Question    */
 
 }
