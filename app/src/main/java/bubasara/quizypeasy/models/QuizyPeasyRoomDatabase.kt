@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+//  the Database class provides the app with instances of the DAOs defined
 @Database(entities = [Category::class, Question::class, CategoryQuestionsDao::class], version = 1, exportSchema = false)
 abstract class QuizyPeasyRoomDatabase : RoomDatabase() {
 
