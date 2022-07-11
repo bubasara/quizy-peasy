@@ -15,12 +15,13 @@ data class Category (
     val numberOfQuestions : Int,
     @ColumnInfo(name = "is_checked")
     var isChecked : Boolean,
-    @ColumnInfo(name = "list_of_questions")
-    val listOfQuestions : ArrayList<Question>,
+    /*@ColumnInfo(name = "list_of_questions")
+    val listOfQuestions : ArrayList<Question>,*/
     @ColumnInfo(name = "img_category")
     val imgCategory : Int)
+/*
 {
     fun addQuestion(question: Question){
         listOfQuestions.add(question)
     }
-}
+}*/

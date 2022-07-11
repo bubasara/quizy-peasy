@@ -11,7 +11,15 @@ data class Question (
     val id: Int = 0,
     @ColumnInfo(name = "question")
     var question : String,
-    @ColumnInfo(name = "list_of_answers")
-    var listOfAnswers : ArrayList<String>,
+    /*@ColumnInfo(name = "list_of_answers")
+    var listOfAnswers : ArrayList<String>,*/
+    @ColumnInfo(name = "answer_a")
+    var answerA : String,
+    @ColumnInfo(name = "answer_b")
+    var answerB : String,
+    @ColumnInfo(name = "answer_c")
+    var answerC : String,
+    @ColumnInfo(name = "answer_d")
+    var answerD : String,
     @ColumnInfo(name = "correct_answer")
     var correctAnswer : String)
