@@ -16,8 +16,9 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     private var newCategory : Category? = null
 
     //  newCategory setter
-    fun setNewCategory(categoryName : String, numberOfQuestions : Int, isChecked : Boolean, listOfQuestions : ArrayList<Question>, imgCategory : Int){
-        newCategory = Category(categoryName, numberOfQuestions, isChecked, listOfQuestions, imgCategory)
+    fun setNewCategory(categoryName : String, numberOfQuestions : Int, isChecked : Boolean, imgCategory : Int){
+    newCategory = Category(categoryName, numberOfQuestions, isChecked, imgCategory)
+
     }
 
     //  newCategory getter
@@ -74,7 +75,9 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
 
     /*  SVM: Create New Category - Create New Question    */
     fun addQuestionToCategory(question: Question){
-        newCategory?.listOfQuestions?.add(question)
+        //TODO
+        //newCategory?.listOfQuestions?.add(question)
+        newQuestion?.category = newCategory!!.id
     }
     /*  end of SVM: Create New Category - Create New Question    */
 

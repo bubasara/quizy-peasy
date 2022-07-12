@@ -85,12 +85,13 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val question = listOfQuestions[position]
 
+        //TODO
         //  question content
-        holder.getTxtViewQuestionContent().text = question.question
+        /*holder.getTxtViewQuestionContent().text = question.question
         holder.getBtnAnswerA().text = question.listOfAnswers[0]
         holder.getBtnAnswerB().text = question.listOfAnswers[1]
         holder.getBtnAnswerC().text = question.listOfAnswers[2]
-        holder.getBtnAnswerD().text = question.listOfAnswers[3]
+        holder.getBtnAnswerD().text = question.listOfAnswers[3]*/
 
         //  on long click -> edit/delete question
         holder.getClQuestionContainer().setOnLongClickListener {
@@ -108,11 +109,18 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     fun editItem(position: Int, questionContent: String,
                  answerA: String, answerB: String, answerC: String, answerD: String,
                  correctAnswer : String){
-        listOfQuestions[position].question = questionContent
+        //TODO
+        /*listOfQuestions[position].question = questionContent
         listOfQuestions[position].listOfAnswers[0] = answerA
         listOfQuestions[position].listOfAnswers[1] = answerB
         listOfQuestions[position].listOfAnswers[2] = answerC
         listOfQuestions[position].listOfAnswers[3] = answerD
+        listOfQuestions[position].correctAnswer = correctAnswer*/
+
+        listOfQuestions[position].answerA = answerA
+        listOfQuestions[position].answerB = answerB
+        listOfQuestions[position].answerC = answerC
+        listOfQuestions[position].answerD = answerD
         listOfQuestions[position].correctAnswer = correctAnswer
         notifyItemChanged(position)
     }

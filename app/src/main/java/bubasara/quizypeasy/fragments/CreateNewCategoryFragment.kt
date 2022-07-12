@@ -14,9 +14,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import bubasara.quizypeasy.R
+import bubasara.quizypeasy.activities.MainActivity
 import bubasara.quizypeasy.adapters.CreateNewCategoryAdapter
 import bubasara.quizypeasy.databinding.FragmentCreateNewCategoryBinding
+import bubasara.quizypeasy.models.CategoryDao
+import bubasara.quizypeasy.models.QuizyPeasyApplication
 import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModel
+import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModelFactory
 import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category) {
@@ -111,7 +115,7 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
                 val listOfQuestions = adapter.listOfQuestions
 
                 //  creating category with collected data
-                sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, listOfQuestions, imgNum)
+                sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, imgNum)
 
                 findNavController().popBackStack()
             }
@@ -122,7 +126,8 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
             when question is edited, observer transfers new data from dialog to recyclerView    */
         sharedViewModel.questionEditLiveDataBoolean.observe(viewLifecycleOwner) {
             if (it) {
-                adapter.editItem(
+                //TODO
+                /*adapter.editItem(
                     editDeleteAtThisPosition,
                     sharedViewModel.getNewQuestion()!!.question,
                     sharedViewModel.getNewQuestion()!!.listOfAnswers[0],
@@ -130,6 +135,15 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
                     sharedViewModel.getNewQuestion()!!.listOfAnswers[2],
                     sharedViewModel.getNewQuestion()!!.listOfAnswers[3],
                     sharedViewModel.getNewQuestion()!!.correctAnswer,
+                )*/
+                adapter.editItem(
+                    editDeleteAtThisPosition,
+                    sharedViewModel.getNewQuestion()!!.question,
+                    sharedViewModel.getNewQuestion()!!.answerA,
+                    sharedViewModel.getNewQuestion()!!.answerB,
+                    sharedViewModel.getNewQuestion()!!.answerC,
+                    sharedViewModel.getNewQuestion()!!.answerD,
+                    sharedViewModel.getNewQuestion()!!.correctAnswer
                 )
                 sharedViewModel.questionEditLiveDataBoolean.value = false
                 adapter.notifyItemChanged(editDeleteAtThisPosition)

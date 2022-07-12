@@ -70,10 +70,13 @@ class CreateNewQuestionDialog : DialogFragment(R.layout.dialog_create_new_questi
                     val editTxtCorrectAnswer = binding.editTxtCorrectAnswer.text.toString()
 
                     //  creating question with collected data
+                    //TODO category id static int
                     sharedViewModel.setNewQuestion(
                         Question(
                             editTxtQuestionContent,
-                            arrayListOf<String>(txtViewA, txtViewB, txtViewC, txtViewD), editTxtCorrectAnswer
+                            txtViewA, txtViewB, txtViewC, txtViewD,
+                            editTxtCorrectAnswer,
+                            1
                         )
                     )
                     sharedViewModel.questionEditLiveDataBoolean.value = true

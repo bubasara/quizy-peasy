@@ -71,18 +71,20 @@ class EditDeleteQuestionDialog : DialogFragment(R.layout.dialog_edit_delete_ques
 
         //  get the data about the question from shared view model and show it
         editTxtQuestionContent.setText(sharedViewModel.getNewQuestion()!!.question)
-        var tempListOfAnswers = sharedViewModel.getNewQuestion()!!.listOfAnswers
-        editTxtA.setText(tempListOfAnswers[0])
-        editTxtB.setText(tempListOfAnswers[1])
-        editTxtC.setText(tempListOfAnswers[2])
-        editTxtD.setText(tempListOfAnswers[3])
+        //var tempListOfAnswers = sharedViewModel.getNewQuestion()!!.listOfAnswers
+        editTxtA.setText(sharedViewModel.getNewQuestion()!!.answerA)
+        editTxtB.setText(sharedViewModel.getNewQuestion()!!.answerB)
+        editTxtC.setText(sharedViewModel.getNewQuestion()!!.answerC)
+        editTxtD.setText(sharedViewModel.getNewQuestion()!!.answerD)
         editTxtCorrectAnswer.setText(sharedViewModel.getNewQuestion()!!.correctAnswer)
 
         //  click on button SAVE -> get data from fields and update the question
+
+        //TODO category id static int
         binding.btnSave.setOnClickListener {
             sharedViewModel.setNewQuestion(Question(editTxtQuestionContent.text.toString(),
-                arrayListOf(editTxtA.text.toString(), editTxtB.text.toString(),
-                    editTxtC.text.toString(), editTxtD.text.toString()), editTxtCorrectAnswer.text.toString()))
+                editTxtA.text.toString(), editTxtB.text.toString(),
+                    editTxtC.text.toString(), editTxtD.text.toString(), editTxtCorrectAnswer.text.toString(), 1))
             //  set flag for edit to true
             sharedViewModel.questionEditLiveDataBoolean.value = true
 
