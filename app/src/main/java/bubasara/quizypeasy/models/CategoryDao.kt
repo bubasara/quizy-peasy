@@ -19,6 +19,6 @@ interface CategoryDao {
     fun getCategory(id: Int) : Flow<Category>
 
     @Query("SELECT * from category ORDER BY id ASC")
-    fun getCategories() : Flow<Category>
+    fun getCategories() : Flow<List<Category>>
 
 }

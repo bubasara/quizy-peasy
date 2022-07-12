@@ -19,6 +19,9 @@ interface QuestionDao {
     fun getQuestion(id: Int) : Flow<Question>
 
     @Query("SELECT * from question ORDER BY id ASC")
-    fun getQuestions() : Flow<Question>
+    fun getQuestions() : Flow<List<Question>>
+
+    @Query("SELECT * from question WHERE category = :category")
+    fun getQuestionsFromCategory() : Flow<List<Question>>
 
 }

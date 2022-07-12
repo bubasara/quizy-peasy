@@ -22,4 +22,6 @@ data class Question (
     @ColumnInfo(name = "answer_d")
     var answerD : String,
     @ColumnInfo(name = "correct_answer")
-    var correctAnswer : String)
+    var correctAnswer : String,
+    @ColumnInfo(name = "category")
+    var category: Int)
