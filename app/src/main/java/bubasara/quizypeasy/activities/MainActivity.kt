@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.databinding.ActivityMainBinding
+import bubasara.quizypeasy.models.QuizyPeasyRoomDatabase
 
 class MainActivity : FragmentActivity() {
 
@@ -19,5 +20,8 @@ class MainActivity : FragmentActivity() {
         //setContentView(R.layout.item_category)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        //  instantiate the database
+        val database : QuizyPeasyRoomDatabase by lazy { QuizyPeasyRoomDatabase.getDatabase(this) }
     }
 }
