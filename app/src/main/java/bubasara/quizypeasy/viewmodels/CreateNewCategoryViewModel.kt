@@ -1,9 +1,16 @@
 package bubasara.quizypeasy.viewmodels
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
+import bubasara.quizypeasy.models.Category
+import bubasara.quizypeasy.models.CategoryDao
 import bubasara.quizypeasy.models.Question
+import bubasara.quizypeasy.models.QuizyPeasyApplication
+import kotlinx.coroutines.launch
+import java.lang.IllegalArgumentException
 
-class CreateNewCategoryViewModel : ViewModel() {
+class CreateNewCategoryViewModel(private val categoryDao : CategoryDao) : ViewModel() {
 
     /*  list of questions
         arraylist consists of
@@ -34,9 +41,36 @@ class CreateNewCategoryViewModel : ViewModel() {
         tempHashMap = hashMapOf(Pair(tempQuestion, tempArrayList))
         listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))*/
 
-        listOfQuestions.add(Question("Question no 1", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), "A"))
-        listOfQuestions.add(Question("Question no 2", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), "B"))
-        listOfQuestions.add(Question("Question no 3", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), "C"))
-        listOfQuestions.add(Question("Question no 4", arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4"), "D"))
+        //TODO category id static int
+        listOfQuestions.add(Question("Question no 1", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "A", 1))
+        listOfQuestions.add(Question("Question no 2", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "B",1))
+        listOfQuestions.add(Question("Question no 3", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "C", 1))
+        listOfQuestions.add(Question("Question no 4", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "D", 1))
+    }
+
+    private fun insertCategory(category: Category){
+        viewModelScope.launch {
+            categoryDao.insert(category)
+        }
+    }
+
+    private fun getNewCategoryEntry(categoryName : String, numberOfQuestions : Int,
+                                    isChecked : Boolean, imgCategory : Int, ) : Category {
+        return Category(
+            categoryName = categoryName,
+            numberOfQuestions = numberOfQuestions,
+            isChecked = isChecked,
+            imgCategory = imgCategory
+        )
+    }
+}
+
+class CreateNewCategoryViewModelFactory(private val categoryDao: CategoryDao) : ViewModelProvider.Factory{
+    override fun <T : ViewModel> create(modelClass: Class<T>) : T {
+        if(modelClass.isAssignableFrom(CreateNewCategoryViewModel::class.java)){
+            @Suppress("UNCHECKED_CAST")
+            return CreateNewCategoryViewModel(categoryDao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }
