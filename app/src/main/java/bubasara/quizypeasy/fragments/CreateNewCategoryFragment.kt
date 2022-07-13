@@ -17,6 +17,7 @@ import bubasara.quizypeasy.R
 import bubasara.quizypeasy.activities.MainActivity
 import bubasara.quizypeasy.adapters.CreateNewCategoryAdapter
 import bubasara.quizypeasy.databinding.FragmentCreateNewCategoryBinding
+import bubasara.quizypeasy.models.Category
 import bubasara.quizypeasy.models.CategoryDao
 import bubasara.quizypeasy.models.QuizyPeasyApplication
 import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModel
@@ -25,7 +26,13 @@ import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category) {
 
-    private val viewModel : CreateNewCategoryViewModel by viewModels()
+    private val viewModel : CreateNewCategoryViewModel by viewModels() {
+        CreateNewCategoryViewModelFactory(
+            (activity?.application as QuizyPeasyApplication).database.categoryDao()
+        )
+    }
+    lateinit var category : Category
+
     val sharedViewModel : SharedViewModel by activityViewModels()
 
     private var _binding : FragmentCreateNewCategoryBinding? = null
@@ -45,6 +52,24 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
     ): View {
         _binding = FragmentCreateNewCategoryBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    private fun isEntryValid() : Boolean {
+        return viewModel.isEntryValid(
+            binding.editTxtCategoryName.text.toString()
+        )
+    }
+
+    //TODO
+    private fun addNewCategory() {
+        /*if (isEntryValid()) {
+            viewModel.addNewCategory(
+                binding.editTxtCategoryName.text.toString(),
+                //todo numofquestions ischecked imgcategory
+            )
+            //todo navigate
+            findNavController().navigate(R.id.action_createNewCategoryFragment_to_chooseCategoriesFragment)
+        }*/
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -116,6 +141,8 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
 
                 //  creating category with collected data
                 sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, imgNum)
+
+                addNewCategory()
 
                 findNavController().popBackStack()
             }

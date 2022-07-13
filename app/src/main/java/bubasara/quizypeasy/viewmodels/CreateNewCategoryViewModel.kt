@@ -12,6 +12,8 @@ import java.lang.IllegalArgumentException
 
 class CreateNewCategoryViewModel(private val categoryDao : CategoryDao) : ViewModel() {
 
+    lateinit var category: Category
+
     /*  list of questions
         arraylist consists of
         Map < Map <question, list of answers>, correct answer >
@@ -21,12 +23,12 @@ class CreateNewCategoryViewModel(private val categoryDao : CategoryDao) : ViewMo
     var listOfQuestions = arrayListOf<Question>()
 
     //for testing purposes, delete later
-    init {
+    /*init {
         makeTestingListOfQuestions()
-    }
+    }*/
 
-    private fun makeTestingListOfQuestions(){
-       /* var tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
+    /*private fun makeTestingListOfQuestions(){
+       *//* var tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
         var tempQuestion = "Question no 1"
         var tempHashMap = hashMapOf(Pair(tempQuestion, tempArrayList))
         listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))
@@ -39,14 +41,14 @@ class CreateNewCategoryViewModel(private val categoryDao : CategoryDao) : ViewMo
         tempArrayList = arrayListOf("Answer 1", "Answer 2", "Answer 3", "Answer 4")
         tempQuestion = "Question no 3"
         tempHashMap = hashMapOf(Pair(tempQuestion, tempArrayList))
-        listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))*/
+        listOfQuestions.add(hashMapOf(Pair(tempHashMap, 1)))*//*
 
         //TODO category id static int
         listOfQuestions.add(Question("Question no 1", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "A", 1))
         listOfQuestions.add(Question("Question no 2", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "B",1))
         listOfQuestions.add(Question("Question no 3", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "C", 1))
         listOfQuestions.add(Question("Question no 4", "Answer 1", "Answer 2", "Answer 3", "Answer 4", "D", 1))
-    }
+    }*/
 
     private fun insertCategory(category: Category){
         viewModelScope.launch {
@@ -54,8 +56,21 @@ class CreateNewCategoryViewModel(private val categoryDao : CategoryDao) : ViewMo
         }
     }
 
+    fun isEntryValid(categoryName : String): Boolean {
+        if (categoryName.isBlank()) {
+            return false
+        }
+        return true
+    }
+
+    fun addNewCategory(categoryName: String, numberOfQuestions : Int,
+                       isChecked : Boolean, imgCategory : Int){
+        val newCategory = getNewCategoryEntry(categoryName, numberOfQuestions, isChecked, imgCategory)
+        insertCategory(newCategory)
+    }
+
     private fun getNewCategoryEntry(categoryName : String, numberOfQuestions : Int,
-                                    isChecked : Boolean, imgCategory : Int, ) : Category {
+                                    isChecked : Boolean, imgCategory : Int) : Category {
         return Category(
             categoryName = categoryName,
             numberOfQuestions = numberOfQuestions,

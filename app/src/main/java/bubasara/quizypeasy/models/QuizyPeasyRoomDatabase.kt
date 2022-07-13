@@ -6,11 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 //  the Database class provides the app with instances of the DAOs defined
-@Database(entities = [Category::class, Question::class], version = 1, exportSchema = false)
+@Database(entities = [Category::class /*, Question::class*/], version = 1, exportSchema = false)
 abstract class QuizyPeasyRoomDatabase : RoomDatabase() {
 
     abstract fun categoryDao(): CategoryDao
-    abstract fun questionDao(): QuestionDao
+    //abstract fun questionDao(): QuestionDao
 
     /*  allows access to the methods for creating or getting the db
         using the class name as the qualifier   */
@@ -22,12 +22,16 @@ abstract class QuizyPeasyRoomDatabase : RoomDatabase() {
         fun getDatabase(context: Context): QuizyPeasyRoomDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context.applicationContext, QuizyPeasyRoomDatabase::class.java, "quizy_peasy_database"
-                ).fallbackToDestructiveMigration().build()
+                    context.applicationContext,
+                    QuizyPeasyRoomDatabase::class.java,
+                    "quizy_peasy_database"
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
-                return instance
+                //return instance
+                instance
             }
         }
     }
-
 }
