@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import bubasara.quizypeasy.R
@@ -70,7 +69,6 @@ class CreateNewQuestionDialog : DialogFragment(R.layout.dialog_create_new_questi
                     val editTxtCorrectAnswer = binding.editTxtCorrectAnswer.text.toString()
 
                     //  creating question with collected data
-                    //TODO category id static int
                     sharedViewModel.setNewQuestion(
                         Question(
                             editTxtQuestionContent,
