@@ -175,7 +175,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:inputType="textMultiLine"
-            android:background="@color/purple_500"
+            android:background="@drawable/rect_round_question"
             android:labelFor="@+id/txtViewCategoryName"
             android:id="@+id/editTxtQuestionContent"/>
         <!--    end of question content    -->
@@ -188,7 +188,7 @@
             app:layout_constraintBottom_toTopOf="@id/glAnswerBTop"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             android:text="@string/txtViewA"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/purple_700"
             android:textSize="24sp"
             android:textStyle="bold"
             android:id="@+id/txtViewA"/>
@@ -211,7 +211,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:inputType="text"
-            android:background="@color/purple_700"
+            android:background="@drawable/rect_round_answer"
             android:labelFor="@+id/txtViewA"
             android:id="@+id/editTxtA"/>
         <!--    end of answer A  -->
@@ -247,7 +247,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:inputType="text"
-            android:background="@color/purple_700"
+            android:background="@drawable/rect_round_answer"
             android:labelFor="@+id/txtViewB"
             android:id="@+id/editTxtB"/>
         <!--    end of answer B  -->
@@ -260,7 +260,7 @@
             app:layout_constraintBottom_toTopOf="@id/glAnswerDTop"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             android:text="@string/txtViewC"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/purple_700"
             android:textSize="24sp"
             android:textStyle="bold"
             android:id="@+id/txtViewC"/>
@@ -283,7 +283,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:inputType="text"
-            android:background="@color/purple_700"
+            android:background="@drawable/rect_round_answer"
             android:labelFor="@+id/txtViewC"
             android:id="@+id/editTxtC"/>
         <!--    end of answer C  -->
@@ -319,7 +319,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:inputType="text"
-            android:background="@color/purple_700"
+            android:background="@drawable/rect_round_answer"
             android:labelFor="@+id/txtViewD"
             android:id="@+id/editTxtD"/>
         <!--    end of answer D  -->
@@ -333,7 +333,7 @@
             app:layout_constraintBottom_toTopOf="@id/glCreateTop"
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             android:text="@string/txtViewCorrectAnswer"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/purple_700"
             android:paddingRight="10dp"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -356,7 +356,7 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             android:inputType="text"
-            android:background="@color/purple_500"
+            android:background="@drawable/rect_round_answer"
             android:labelFor="@+id/txtViewD"
             android:autofillHints="Answer D"
             android:id="@+id/editTxtCorrectAnswer"/>
@@ -371,7 +371,7 @@
             app:layout_constraintLeft_toRightOf="@id/glInsideDialogLeft"
             app:layout_constraintRight_toLeftOf="@id/glInsideDialogRight"
             android:text="@string/btnCreate"
-            android:background="@color/purple_500"
+            android:background="@drawable/rect_round_question"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:id="@+id/btnCreate"/>
