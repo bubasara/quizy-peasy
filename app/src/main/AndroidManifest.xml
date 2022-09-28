@@ -4,11 +4,12 @@
     package="bubasara.quizypeasy">
 
     <application
+        android:name=".models.QuizyPeasyApplication"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
+        android:icon="@mipmap/icon"
         android:label="quizy-peasy"
         android:screenOrientation="portrait"
         android:roundIcon="@mipmap/ic_launcher_round"
