@@ -172,6 +172,7 @@
             android:autoSizeMaxTextSize="18sp"
             android:textStyle="bold"
             android:maxLength="20"
+            android:maxLines="1"
             android:id="@+id/txtViewCategoryName"/>
         <!--    end of category name -->
 
@@ -186,9 +187,10 @@
             android:hint="@string/txtViewNumberOfQuestions"
             android:textColorHint="@color/purple_700"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:autoSizeTextType="uniform"
             android:autoSizeMaxTextSize="16sp"
             android:textStyle="bold"
+            android:maxLines="1"
             android:id="@+id/txtViewNumberOfQuestions"/>
         <!--    end of number of questions -->
 
