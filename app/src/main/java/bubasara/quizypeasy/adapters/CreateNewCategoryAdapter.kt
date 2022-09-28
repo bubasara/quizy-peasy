@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -16,10 +15,10 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     : RecyclerView.Adapter<CreateNewCategoryAdapter.ViewHolder>() {
 
     //  creating list of questions
-    var listOfQuestions = ArrayList<Question>()
+    var listOfQuestions1 = ArrayList<Question>()
 
     internal fun setListOfQuestions(listOfQuestions : ArrayList<Question>){
-        this.listOfQuestions = listOfQuestions
+        this.listOfQuestions1 = listOfQuestions
     }
 
     //  interface for long click on question -> open edit/delete dialog
@@ -31,7 +30,7 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         private val clQuestionContainer : ConstraintLayout
         private val txtViewQuestionContent : TextView
-        private val txtViewAnswers : TextView
+        //private val txtViewAnswers : TextView
         private val btnAnswerA : Button
         private val btnAnswerB : Button
         private val btnAnswerC : Button
@@ -40,7 +39,7 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
         init {
             clQuestionContainer = view.findViewById(R.id.constraintLayoutQuestionContainer)
             txtViewQuestionContent = view.findViewById(R.id.txtViewQuestionContent)
-            txtViewAnswers = view.findViewById(R.id.txtViewAnswers)
+            //txtViewAnswers = view.findViewById(R.id.txtViewAnswers)
             btnAnswerA = view.findViewById(R.id.btnAnswerA)
             btnAnswerB = view.findViewById(R.id.btnAnswerB)
             btnAnswerC = view.findViewById(R.id.btnAnswerC)
@@ -83,7 +82,7 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
 
     //  binding elements with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val question = listOfQuestions[position]
+        val question = listOfQuestions1[position]
 
         //TODO
         //  question content
@@ -102,7 +101,7 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
 
     //  num of items for recyclerview
     override fun getItemCount(): Int {
-        return listOfQuestions.size
+        return listOfQuestions1.size
     }
 
     //  set new (edit) text for question on clicked position
@@ -117,17 +116,17 @@ class CreateNewCategoryAdapter(var context : Context, private val interfaceListe
         listOfQuestions[position].listOfAnswers[3] = answerD
         listOfQuestions[position].correctAnswer = correctAnswer*/
 
-        listOfQuestions[position].answerA = answerA
-        listOfQuestions[position].answerB = answerB
-        listOfQuestions[position].answerC = answerC
-        listOfQuestions[position].answerD = answerD
-        listOfQuestions[position].correctAnswer = correctAnswer
+        listOfQuestions1[position].answerA = answerA
+        listOfQuestions1[position].answerB = answerB
+        listOfQuestions1[position].answerC = answerC
+        listOfQuestions1[position].answerD = answerD
+        listOfQuestions1[position].correctAnswer = correctAnswer
         notifyItemChanged(position)
     }
 
     //  delete question on clicked position
     fun deleteItem(position: Int){
-        listOfQuestions.removeAt(position)
+        listOfQuestions1.removeAt(position)
         notifyItemRemoved(position)
         notifyDataSetChanged()
     }
