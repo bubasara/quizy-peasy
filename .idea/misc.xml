@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable-xxhdpi/rect_round_answer.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable-xxhdpi/rect_round_gameplay_question.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable-xxhdpi/rect_round_question.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_answer.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_gameplay_question.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_question.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_create_new_question.xml" value="0.35104166666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_delete_category.xml" value="0.2630208333333333" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_edit_delete_question.xml" value="0.2630208333333333" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_choose_categories.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_create_new_category.xml" value="0.35104166666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_gameplay.xml" value="0.35104166666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/item_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/item_gameplay.xml" value="0.35104166666666664" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2005" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout-v26/dialog_how_to_play.xml" value="0.25" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout-v26/item_category.xml" value="0.30842391304347827" />
         <entry key="..\:/Users/sara/AndroidStudioProjects/QuizyPeasy/app/src/main/res/layout/activity_main.xml" value="0.3197463768115942" />
