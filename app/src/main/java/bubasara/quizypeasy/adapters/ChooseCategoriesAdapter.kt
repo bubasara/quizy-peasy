@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.models.Category
@@ -22,8 +23,13 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
     }
 
     //  creating list of categories
-    var listOfCategories = ArrayList<Category>()
-    internal fun setListOfCategories(listOfCategories: ArrayList<Category>){
+//    var listOfCategories = ArrayList<Category>()
+//    internal fun setListOfCategories(listOfCategories: ArrayList<Category>){
+//        this.listOfCategories = listOfCategories
+//    }
+
+    lateinit var listOfCategories : List<Category>
+    internal fun setListOfCategories(listOfCategories: List<Category>){
         this.listOfCategories = listOfCategories
     }
 
@@ -80,6 +86,7 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
 
     //  binding elements with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //val category = listOfCategories[position]
         val category = listOfCategories[position]
 
         holder.getTxtViewCategoryName().text = category.categoryName
@@ -123,12 +130,12 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
     }
 
     fun deleteItem(position: Int){
-        listOfCategories.removeAt(position)
         notifyItemRemoved(position)
     }
 
     //  num of items for recyclerview
     override fun getItemCount(): Int {
+//        return listOfCategories.size
         return listOfCategories.size
     }
 
