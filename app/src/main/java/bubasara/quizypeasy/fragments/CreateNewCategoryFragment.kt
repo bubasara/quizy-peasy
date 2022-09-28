@@ -10,25 +10,22 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import bubasara.quizypeasy.R
-import bubasara.quizypeasy.activities.MainActivity
 import bubasara.quizypeasy.adapters.CreateNewCategoryAdapter
 import bubasara.quizypeasy.databinding.FragmentCreateNewCategoryBinding
 import bubasara.quizypeasy.models.Category
-import bubasara.quizypeasy.models.CategoryDao
 import bubasara.quizypeasy.models.QuizyPeasyApplication
-import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModel
-import bubasara.quizypeasy.viewmodels.CreateNewCategoryViewModelFactory
+import bubasara.quizypeasy.viewmodels.CategoryViewModel
+import bubasara.quizypeasy.viewmodels.CategoryViewModelFactory
 import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category) {
 
-    private val viewModel : CreateNewCategoryViewModel by viewModels() {
-        CreateNewCategoryViewModelFactory(
-            (activity?.application as QuizyPeasyApplication).database.categoryDao()
+    private val viewModel : CategoryViewModel by viewModels() {
+        CategoryViewModelFactory(
+            ((activity?.application as QuizyPeasyApplication).database.categoryDao())
         )
     }
     lateinit var category : Category
@@ -54,11 +51,11 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
         return binding.root
     }
 
-    private fun isEntryValid() : Boolean {
+  /*  private fun isEntryValid() : Boolean {
         return viewModel.isEntryValid(
             binding.editTxtCategoryName.text.toString()
         )
-    }
+    }*/
 
     //TODO
     private fun addNewCategory() {
@@ -91,7 +88,7 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
             object :    CreateNewCategoryAdapter.CreateNewCategoryInterface {
                 override fun longClickOnQuestion(position: Int) {
                     editDeleteAtThisPosition = position //  the real init is when question clicked
-                    sharedViewModel.setNewQuestion(adapter.listOfQuestions[position])
+                    sharedViewModel.setNewQuestion(adapter.listOfQuestions1[position])
                     findNavController().navigate(R.id.action_createNewCategoryFragment_to_editDeleteQuestionDialog)
                 }
             })
@@ -99,11 +96,15 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
         /*  recyclerView for questions  */
         val recyclerViewQuestions = binding.recyclerViewQuestions
         //sharedViewModel.getNewQuestion()?.let { adapter.listOfQuestions.add(it) }
-        adapter.setListOfQuestions(viewModel.listOfQuestions)
+        // todo -> restore this
+        // adapter.setListOfQuestions(viewModel.listOfQuestions)
+
+        //  ??
         if (sharedViewModel.getNewQuestion() != null){
-            adapter.listOfQuestions.add(sharedViewModel.getNewQuestion()!!)
+            adapter.listOfQuestions1.add(sharedViewModel.getNewQuestion()!!)
             adapter.notifyDataSetChanged()
         }
+
         recyclerViewQuestions.layoutManager = GridLayoutManager(context, 2) //two columns
         recyclerViewQuestions.adapter = adapter
         /*  end of recyclerView for questions   */
@@ -125,7 +126,7 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
                     Toast.LENGTH_SHORT).show()
 
             } //  if category has no questions
-            else if (adapter.listOfQuestions.size == 0) {
+            else if (adapter.listOfQuestions1.size == 0) {
                 Toast.makeText(requireContext(), "Category must not be empty. Please add a question.",
                     Toast.LENGTH_SHORT).show()
             }
@@ -136,8 +137,8 @@ class CreateNewCategoryFragment : Fragment(R.layout.fragment_create_new_category
 //                adapter.notifyDataSetChanged()
                 val imgNum = imgNum
                 val categoryName = binding.editTxtCategoryName.text.toString()
-                val numberOfQuestions = adapter.listOfQuestions.size
-                val listOfQuestions = adapter.listOfQuestions
+                val numberOfQuestions = adapter.listOfQuestions1.size
+                val listOfQuestions = adapter.listOfQuestions1
 
                 //  creating category with collected data
                 sharedViewModel.setNewCategory(categoryName, numberOfQuestions,true, imgNum)
