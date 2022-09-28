@@ -21,4 +21,7 @@ interface CategoryDao {
     @Query("SELECT * from category ORDER BY id ASC")
     fun getCategories() : Flow<List<Category>>
 
+    @Query("SELECT * from category WHERE img_category IN (:listOfInts)")
+    fun getQuestionsFromCategories(listOfInts : List<Int>) : Flow<List<Category>>
+
 }
