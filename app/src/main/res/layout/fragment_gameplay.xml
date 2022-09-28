@@ -63,8 +63,8 @@
     <include
         android:id="@+id/layoutGameplay"
         layout="@layout/item_gameplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/glGameplayBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/glGameplayBottom"
         app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
         android:text="@string/btnPrevious"
-        android:background="@color/purple_500"
+        android:background="@drawable/rect_round_answer"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:id="@+id/btnPrevious"/>
@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@id/glGameplayBottom"
         app:layout_constraintRight_toLeftOf="@id/glRightVertical"
         android:text="@string/btnSkip"
-        android:background="@color/purple_500"
+        android:background="@drawable/rect_round_answer"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:id="@+id/btnNext"/>
@@ -107,7 +107,7 @@
         app:layout_constraintLeft_toLeftOf="@id/glMiddleVertical"
         app:layout_constraintRight_toRightOf="@id/glMiddleVertical"
         android:text="@string/btnQuit"
-        android:background="@color/purple_700"
+        android:background="@drawable/rect_round_answer"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:id="@+id/btnQuit"/>
