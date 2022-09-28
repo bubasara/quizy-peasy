@@ -10,10 +10,12 @@ data class Category (
     @ColumnInfo(name = "category_name")
     var categoryName : String,
     @ColumnInfo(name = "number_of_questions")
-    val numberOfQuestions : Int,
+    var numberOfQuestions : Int,
     @ColumnInfo(name = "is_checked")
     var isChecked : Boolean,
     @ColumnInfo(name = "img_category")
-    val imgCategory : Int,
+    var imgCategory : Int)
+{
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0)
+    var id: Int = 0
+}

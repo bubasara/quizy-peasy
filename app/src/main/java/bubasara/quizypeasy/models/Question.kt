@@ -22,6 +22,8 @@ data class Question (
     @ColumnInfo(name = "correct_answer")
     var correctAnswer : String,
     @ColumnInfo(name = "category")
-    var category: Int,
+    var category: Int)
+{
     @PrimaryKey(autoGenerate = true)
-    val id: Int = 0)
+    var id: Int = 0
+}
