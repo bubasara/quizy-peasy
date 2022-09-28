@@ -1,99 +1,383 @@
 [
   {
     "categoryName" : "Geography",
-    "numberOfQuestions" : 2,
+    "numberOfQuestions" : 13,
     "isChecked" : true,
     "listOfQuestions" : [
       {
-        "question": "Which is the capital of Serbia",
-        "listOfAnswers": [
-          "Niš",
-          "Novi Sad",
-          "Kragujevac",
-          "Belgrade"
-        ],
-        "correctAnswer": 4
+        "question": "Which is the capital of Serbia?",
+        "answerA": "Niš",
+        "answerB": "Novi Sad",
+        "answerC": "Kragujevac",
+        "answerD": "Belgrade",
+        "correctAnswer": 4,
+        "category" : 1
       },
       {
-        "question": "Which is the highest peak of Suva Mountain",
-        "listOfAnswers": [
-          "Sokolov kamen",
-          "Trem",
-          "Mosor",
-          "Midžor"
-        ],
-        "correctAnswer": 2
+        "question": "Which is the highest peak of Suva Mountain?",
+        "answerA": "Sokolov kamen",
+        "answerB": "Trem",
+        "answerC": "Mosor",
+        "answerD": "Midžor",
+        "correctAnswer": 2,
+        "category" : 1
+      },
+      {
+        "question": "Which country has the largest population in the world?",
+        "answerA": "USA",
+        "answerB": "Russia",
+        "answerC": "China",
+        "answerD": "Canada",
+        "correctAnswer": 3,
+        "category" : 1
+      },
+      {
+        "question": "What American city is the Golden Gate Bridge located in?",
+        "answerA": "San Francisco",
+        "answerB": "New York",
+        "answerC": "Washington",
+        "answerD": "Philadelphia",
+        "correctAnswer": 1,
+        "category" : 1
+      },
+      {
+        "question": "What is the name of the largest country in the world?",
+        "answerA": "USA",
+        "answerB": "Russia",
+        "answerC": "China",
+        "answerD": "Canada",
+        "correctAnswer": 2,
+        "category" : 1
+      },
+      {
+        "question": "What is the name of the largest ocean in the world?",
+        "answerA": "The Pacific Ocean",
+        "answerB": "The Atlantic Ocean",
+        "answerC": "The Indian Ocean",
+        "answerD":  "The Arctic Ocean",
+        "correctAnswer": 1,
+        "category" : 1
+      },
+      {
+        "question": "What is the name of the smallest country in the world?",
+        "answerA": "Monaco",
+        "answerB": "The Vatican City",
+        "answerC": "Nauru",
+        "answerD": "San Marino",
+        "correctAnswer": 2,
+        "category" : 1
+      },
+      {
+        "question": "How many States does the United States consist of?",
+        "answerA": "48",
+        "answerB": "50",
+        "answerC": "52",
+        "answerD": "54",
+        "correctAnswer": 2,
+        "category" : 1
+      },
+      {
+        "question": "What planet is closest to Earth?",
+        "answerA": "Mars",
+        "answerB": "Neptune",
+        "answerC": "Venus",
+        "answerD": "Uranus",
+        "correctAnswer": 3,
+        "category" : 1
+      },
+      {
+        "question": "What is the coldest place on Earth?",
+        "answerA": "Arctic",
+        "answerB": "Alaska",
+        "answerC": "Siberia",
+        "answerD": "Antarctica",
+        "correctAnswer": 4,
+        "category" : 1
+      },
+      {
+        "question": "Where are the Spanish Steps located?",
+        "answerA": "Madrid, Spain",
+        "answerB": "Lisbon, Portugal",
+        "answerC": "Paris, France",
+        "answerD": "Rome, Italy",
+        "correctAnswer": 4,
+        "category" : 1
+      },
+      {
+        "question": "How many time zones does Russia have?",
+        "answerA": "8",
+        "answerB": "9",
+        "answerC": "11",
+        "answerD": "13",
+        "correctAnswer": 3,
+        "category" : 1
+      },
+      {
+        "question": "What is the name of the largest city in Australia?",
+        "answerA": "Canberra",
+        "answerB": "Brisbane",
+        "answerC": "Sidney",
+        "answerD": "Melbourne",
+        "correctAnswer": 2,
+        "category" : 1
       }
     ],
-    "imgCategory" : 1
+    "imgCategory" : 1,
+    "id" : 1
   },
 
   {
     "categoryName" : "Maths",
-    "numberOfQuestions" : 3,
+    "numberOfQuestions" : 10,
     "isChecked" : true,
     "listOfQuestions" : [
       {
         "question": "Which 3 numbers have the same answer whether they’re added or multiplied together?",
-        "listOfAnswers": [
-          "1, 2, 3",
-          "-1, 2, 3",
-          "3, 5, 8",
-          "2, 10, 100"
-        ],
-        "correctAnswer": 1
+        "answerA": "1, 2, 3",
+        "answerB": "-1, 2, 3",
+        "answerC": "3, 5, 8",
+        "answerD": "2, 10, 100",
+        "correctAnswer": 1,
+        "category" : 2
       },
       {
         "question": "The day before yesterday I was 25. The next year I will be 28. This is true only one day in a year. What day is my Birthday?",
-        "listOfAnswers": [
-          "February 28th",
-          "December 31rd",
-          "February 29th",
-          "January 1st"
-        ],
-        "correctAnswer": 2
+        "answerA": "February 28th",
+        "answerB": "December 31rd",
+        "answerC": "February 29th",
+        "answerD": "January 1st",
+        "correctAnswer": 2,
+        "category" : 2
       },
       {
         "question": " Look at this series: 22, 21, 23, 22, 24, 23, … What number should come next?",
-        "listOfAnswers": [
-          "22",
-          "21",
-          "25",
-          "26"
-        ],
-        "correctAnswer": 3
+        "answerA": "22",
+        "answerB": "21",
+        "answerC": "25",
+        "answerD": "26",
+        "correctAnswer": 3,
+        "category" : 2
+      },
+      {
+        "question": "If 1=3, 2=3, 3=5, 4=4, 5=4, then 6 = ?",
+        "answerA": "4",
+        "answerB": "3",
+        "answerC": "7",
+        "answerD": "6",
+        "correctAnswer": 2,
+        "category" : 2
+      },
+      {
+        "question": "There are 49 dogs signed up for a dog show. There are 36 more small dogs than large dogs. How many small dogs have signed up to compete?",
+        "answerA": "13",
+        "answerB": "42.5",
+        "answerC": "85",
+        "answerD": "36",
+        "correctAnswer": 2,
+        "category" : 2
+      },
+      {
+        "question": "I am an odd number. Take away one letter and I become even. What number am I?",
+        "answerA": "Sixteen",
+        "answerB": "Eleven",
+        "answerC": "Seven",
+        "answerD": "Three",
+        "correctAnswer": 3,
+        "category" : 2
+      },
+      {
+        "question": "Sally is 54 years old and her mother is 80, how many years ago was Sally’s mother times her age?",
+        "answerA": "11 years ago",
+        "answerB": "41 years ago",
+        "answerC": "32 years ago",
+        "answerD": "4 years ago",
+        "correctAnswer": 2,
+        "category" : 2
+      },
+      {
+        "question": "How many feet are in a mile?",
+        "answerA": "5280",
+        "answerB": "3142",
+        "answerC": "2121",
+        "answerD": "1300",
+        "correctAnswer": 1,
+        "category" : 2
+      },
+      {
+        "question": "Solve -15+(-5x)=0",
+        "answerA": "3",
+        "answerB": "5",
+        "answerC": "0",
+        "answerD": "-3",
+        "correctAnswer": 4,
+        "category" : 2
+      },
+      {
+        "question": "1=4, 2=16, 3=64, 4=? What number should replace the question mark?",
+        "answerA": "80",
+        "answerB": "256",
+        "answerC": "1024",
+        "answerD": "96",
+        "correctAnswer": 2,
+        "category" : 2
       }
     ],
-    "imgCategory" : 2
+    "imgCategory" : 2,
+    "id" : 2
   },
 
   {
     "categoryName" : "Gaming",
-    "numberOfQuestions" : 2,
+    "numberOfQuestions" : 16,
     "isChecked" : true,
     "listOfQuestions" : [
       {
         "question": "What does the WoW stand for?",
-        "listOfAnswers": [
-          "Wondering of Whales",
-          "World of Warcraft",
-          "World of Tanks",
-          "World of Warriors"
-        ],
-        "correctAnswer": 2
+        "answerA": "Wondering of Whales",
+        "answerB": "World of Warcraft",
+        "answerC": "World of Tanks",
+        "answerD": "World of Warriors",
+        "correctAnswer": 2,
+        "category" : 3
       },
       {
-        "question": "Which is not a version of Counter-Strike",
-        "listOfAnswers": [
-          "Counter-Strike 1.6",
-          "Counter-Strike: Global Offensive",
-          "Half-Life: Counter-Strike",
-          "Counter-Strike: Mission Impossible"
-        ],
-        "correctAnswer": 4
+        "question": "Which is not a version of Counter-Strike?",
+        "answerA": "Counter-Strike 1.6",
+        "answerB": "Counter-Strike: Global Offensive",
+        "answerC": "Half-Life: Counter-Strike",
+        "answerD": "Counter-Strike: Mission Impossible",
+        "correctAnswer": 4,
+        "category" : 3
+      },
+      {
+        "question": "What is the most-played video game of all time?",
+        "answerA": "Fortnite",
+        "answerB": "LoL",
+        "answerC": "Minecraft",
+        "answerD": "Among Us",
+        "correctAnswer": 1,
+        "category" : 3
+      },
+      {
+        "question": "Which was the first video game to be played in space?",
+        "answerA": "Pac-Man",
+        "answerB": "Tetris",
+        "answerC": "Super Mario",
+        "answerD": "Space Invaders",
+        "correctAnswer": 2,
+        "category" : 3
+      },
+      {
+        "question": "Pacman was designed to resemble which food?",
+        "answerA": "Cookie",
+        "answerB": "Candy",
+        "answerC": "Pizza",
+        "answerD": "Onion rings",
+        "correctAnswer": 3,
+        "category" : 3
+      },
+      {
+        "question": "What was the name of the first video game ever created?",
+        "answerA": "Pong",
+        "answerB": "Donkey Kong",
+        "answerC": "Contra",
+        "answerD": "Prince of Persia",
+        "correctAnswer": 1,
+        "category" : 3
+      },
+      {
+        "question": "Nintendo began as a company that sold which products?",
+        "answerA": "Telephones",
+        "answerB": "Playing cards",
+        "answerC": "Bicycles",
+        "answerD": "Balls",
+        "correctAnswer": 2,
+        "category" : 3
+      },
+      {
+        "question": "Who is the first character you play in 'Injustice 2?'",
+        "answerA": "Superman",
+        "answerB": "Flash",
+        "answerC": "Wonder Woman",
+        "answerD": "Batman",
+        "correctAnswer": 4,
+        "category" : 3
+      },
+      {
+        "question": "Which French video game company is publishing the 'Far Cry' series?",
+        "answerA": "Electronic Arts",
+        "answerB": "Epic Games",
+        "answerC": "Gameloft",
+        "answerD": "Ubisoft",
+        "correctAnswer": 4,
+        "category" : 3
+      },
+      {
+        "question": "What's the best selling video game console of all time?",
+        "answerA": "PlayStation 1",
+        "answerB": "PlayStation 2",
+        "answerC": "PlayStation 4",
+        "answerD": "Nintendo 64",
+        "correctAnswer": 2,
+        "category" : 3
+      },
+      {
+        "question": "What was Mario's first job?",
+        "answerA": "Carpenter",
+        "answerB": "Plumber",
+        "answerC": "Paper boy",
+        "answerD": "Janitor",
+        "correctAnswer": 1,
+        "category" : 3
+      },
+      {
+        "question": "When was the first 'Call Of Duty' video game released?",
+        "answerA": "2001.",
+        "answerB": "2002.",
+        "answerC": "2003.",
+        "answerD": "2004.",
+        "correctAnswer": 3,
+        "category" : 3
+      },
+      {
+        "question": "Blizzard Entertainment is best known for which video game franchise?",
+        "answerA": "WoW",
+        "answerB": "LoL",
+        "answerC": "WoT",
+        "answerD": "CS",
+        "correctAnswer": 1,
+        "category" : 3
+      },
+      {
+        "question": "In what year was the first virtual reality headset created?",
+        "answerA": "1989.",
+        "answerB": "1995.",
+        "answerC": "1999.",
+        "answerD": "2003.",
+        "correctAnswer": 2,
+        "category" : 3
+      },
+      {
+        "question": "What is the name of the fictional world that 'Super Mario Bros' is set in?",
+        "answerA": "The Princess Kingdom",
+        "answerB": "The Lava Kingdom",
+        "answerC": "The Village Kingdom",
+        "answerD": "The Mushroom Kingdom",
+        "correctAnswer": 4,
+        "category" : 3
+      },
+      {
+        "question": "What's the name of the planet that hosts the 'Gears Of War' game?",
+        "answerA": "Pluto",
+        "answerB": "Sera",
+        "answerC": "Sesame",
+        "answerD": "T-23",
+        "correctAnswer": 2,
+        "category" : 3
       }
     ],
-    "imgCategory" : 3
+    "imgCategory" : 3,
+    "id" : 3
   }
 
 ]
