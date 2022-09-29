@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.models.Category
@@ -19,16 +18,10 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
     //  using interface to notify of any change
     interface ChooseCategoriesAdapterInterface {
         fun longClickOnCategory(position: Int)
-        fun clickOnIsChecked()
+        fun clickOnIsChecked(category: Category)
     }
 
-    //  creating list of categories
-//    var listOfCategories = ArrayList<Category>()
-//    internal fun setListOfCategories(listOfCategories: ArrayList<Category>){
-//        this.listOfCategories = listOfCategories
-//    }
-
-    lateinit var listOfCategories : List<Category>
+    private lateinit var listOfCategories : List<Category>
     internal fun setListOfCategories(listOfCategories: List<Category>){
         this.listOfCategories = listOfCategories
     }
@@ -86,15 +79,11 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
 
     //  binding elements with data
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //val category = listOfCategories[position]
         val category = listOfCategories[position]
 
         holder.getTxtViewCategoryName().text = category.categoryName
         holder.getTxtViewNumberOfQuestions().text = "${category.numberOfQuestions} questions"
         holder.getImgViewCheck().tag = R.drawable.square
-        /*holder.getImgViewCategoryImage().setImageDrawable(ContextCompat.getDrawable(
-            holder.getImgViewCategoryImage().context, category.imgCategory
-        ))*/
 
         val imgCategory = holder.getImgViewCategoryImage().context.resources.getIdentifier(
             "category_${category.imgCategory}", "drawable", holder.getImgViewCategoryImage().context.packageName
@@ -119,7 +108,7 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
                 category.isChecked = true
             }
 
-            interfaceListener.clickOnIsChecked()
+            interfaceListener.clickOnIsChecked(category)
         }
 
         //  catch long click on category
@@ -135,7 +124,6 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
 
     //  num of items for recyclerview
     override fun getItemCount(): Int {
-//        return listOfCategories.size
         return listOfCategories.size
     }
 
