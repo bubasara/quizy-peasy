@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.adapters.ChooseCategoriesAdapter
 import bubasara.quizypeasy.databinding.FragmentChooseCategoriesBinding
+import bubasara.quizypeasy.models.Category
 import bubasara.quizypeasy.models.QuizyPeasyApplication
 import bubasara.quizypeasy.utils.getListOfCategoriesFromJson
 import bubasara.quizypeasy.viewmodels.CategoryViewModel
@@ -30,7 +32,7 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private lateinit var chooseCategoriesAdapter: ChooseCategoriesAdapter
-    private var hasCategoryCheckStateChanged = false
+    var hasCategoryCheckStateChanged = false
     var deletePosition = -1
 
     private var _binding: FragmentChooseCategoriesBinding? = null
@@ -60,7 +62,12 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
                 }
 
                 //  click on category check square -> checked
-                override fun clickOnIsChecked() {
+                override fun clickOnIsChecked(category : Category) {
+                    if(sharedViewModel.listOfCheckedCategories.contains(category.id)){
+                        sharedViewModel.removeFromCheckedCategories(category.id)
+                    } else {
+                        sharedViewModel.addToCheckedCategories(category.id)
+                    }
                     hasCategoryCheckStateChanged = true
                 }
             }
@@ -108,15 +115,18 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
 
         //click on Play button -> go to Gameplay fragment
         binding.btnPlay.setOnClickListener {
-            //  todo svm list of questions for chosen categories
-            findNavController().navigate(R.id.action_chooseCategoriesFragment_to_gamePlayFragment)
+            if(sharedViewModel.listOfCheckedCategories.isEmpty()) {
+                Toast.makeText(requireContext(), "Check categories that you want to play.", Toast.LENGTH_SHORT).show()
+            } else {
+                findNavController().navigate(R.id.action_chooseCategoriesFragment_to_gamePlayFragment)
+            }
         }
     }
 
     private fun initCategoriesData() {
-        //  if there is no records of categories in db
         categoryViewModel.retrieveAllCategories().observe(this.viewLifecycleOwner) { allCategories ->
 
+            //  if category table in db is empty
             if(allCategories.isNullOrEmpty())
             {
                 for (categoryWithQuestions in getListOfCategoriesFromJson(requireContext())) {
