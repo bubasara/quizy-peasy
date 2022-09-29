@@ -2,7 +2,7 @@
   {
     "categoryName" : "Geography",
     "numberOfQuestions" : 13,
-    "isChecked" : true,
+    "isChecked" : false,
     "listOfQuestions" : [
       {
         "question": "Which is the capital of Serbia?",
@@ -129,7 +129,7 @@
   {
     "categoryName" : "Maths",
     "numberOfQuestions" : 10,
-    "isChecked" : true,
+    "isChecked" : false,
     "listOfQuestions" : [
       {
         "question": "Which 3 numbers have the same answer whether they’re added or multiplied together?",
@@ -229,7 +229,7 @@
   {
     "categoryName" : "Gaming",
     "numberOfQuestions" : 16,
-    "isChecked" : true,
+    "isChecked" : false,
     "listOfQuestions" : [
       {
         "question": "What does the WoW stand for?",
