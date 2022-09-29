@@ -36,6 +36,17 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
     /*  end of SVM: CreateNewCategory - ChooseCategories    */
     /*  SVM: Choose Categories - Gameplay  */
 
+    //  list of IDs of categories which are checked for play
+    var listOfCheckedCategories : ArrayList<Int> = arrayListOf()
+
+    fun addToCheckedCategories(categoryId : Int) {
+        listOfCheckedCategories.add(categoryId)
+    }
+
+    fun removeFromCheckedCategories(categoryId: Int){
+        listOfCheckedCategories.remove(categoryId)
+    }
+
     /*  data.json   */
     var listOfCategories = arrayListOf<Category>()
     init {
