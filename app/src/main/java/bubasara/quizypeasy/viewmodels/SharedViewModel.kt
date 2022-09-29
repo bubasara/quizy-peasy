@@ -47,8 +47,12 @@ class SharedViewModel(application : Application) : AndroidViewModel(application)
         listOfCheckedCategories.remove(categoryId)
     }
 
+    fun resetListOfCheckedCategories(){
+        listOfCheckedCategories = arrayListOf()
+    }
+
     /*  data.json   */
-    var listOfCategories = arrayListOf<Category>()
+    private var listOfCategories = arrayListOf<Category>()
     init {
         getListOfCategoriesFromJson(application)
     }

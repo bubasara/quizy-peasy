@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.databinding.FragmentStatsBinding
+import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class StatsFragment : Fragment(R.layout.fragment_stats) {
 
     private var _binding : FragmentStatsBinding? = null
     private val binding get() = _binding!!
+
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +32,7 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
 
         //click on Play again button -> go to Choose Categories fragment
         binding.btnPlayAgain.setOnClickListener {
+            sharedViewModel.resetListOfCheckedCategories()
             findNavController().navigate(R.id.action_statsFragment_to_chooseCategoriesFragment)
         }
 
