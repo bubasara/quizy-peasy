@@ -43,6 +43,10 @@ class QuestionViewModel(private val questionDao: QuestionDao) : ViewModel() {
         return questionDao.getQuestions().asLiveData()
     }
 
+    fun retrieveQuestionsFromCategories(categories : ArrayList<Int>) : LiveData<List<Question>> {
+        return questionDao.getQuestionsFromCategories(categories).asLiveData()
+    }
+
     private fun getNewQuestionEntry(question: String, answerA: String, answerB: String, answerC: String,
                                 answerD: String, correctAnswer : String, category : Int): Question {
         return Question(
