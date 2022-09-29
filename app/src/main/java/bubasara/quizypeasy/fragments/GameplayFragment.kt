@@ -24,6 +24,8 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
     var gameplayRandomQuestions : ArrayList<Question> = arrayListOf()
     var index = 0
+    private var lastQuestion: Boolean = false
+
 
     private val questionViewModel : QuestionViewModel by viewModels {
         QuestionViewModelFactory(
@@ -49,14 +51,13 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
         //click on Previous button -> get previous question
         binding.btnPrevious.setOnClickListener {
-            //todo
+            showPreviousQuestion()
         }
 
         //click on Next button -> get next question
-        binding.btnNext.setOnClickListener {
-            //todo
-            //for testing purposes
-            findNavController().navigate(R.id.action_gamePlayFragment_to_statsFragment)
+        binding.btnSkip.setOnClickListener {
+            showNextQuestion()
+            //findNavController().navigate(R.id.action_gamePlayFragment_to_statsFragment)
         }
 
         //click on Quit button -> go to Leave dialog fragment
@@ -121,6 +122,24 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
         binding.layoutGameplay.btnAnswerB.text = gameplayRandomQuestions[index].answerB
         binding.layoutGameplay.btnAnswerC.text = gameplayRandomQuestions[index].answerC
         binding.layoutGameplay.btnAnswerD.text = gameplayRandomQuestions[index].answerD
+    }
+
+    private fun showPreviousQuestion(){
+        if(index == 1) {
+            binding.layoutGameplay.txtViewQuestionContent.text = gameplayRandomQuestions[--index].question
+        } else if (index > 1) {
+            binding.layoutGameplay.txtViewQuestionContent.text = gameplayRandomQuestions[--index].question
+        }
+    }
+
+    private fun showNextQuestion(){
+        if (index == 0){
+            binding.layoutGameplay.txtViewQuestionContent.text = gameplayRandomQuestions[++index].question
+        } else if (index < gameplayRandomQuestions.size-1){
+            binding.layoutGameplay.txtViewQuestionContent.text = gameplayRandomQuestions[++index].question
+        } else {
+            findNavController().navigate(R.id.action_gamePlayFragment_to_statsFragment)
+        }
     }
 
 
