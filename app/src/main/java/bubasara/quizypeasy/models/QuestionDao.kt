@@ -25,6 +25,6 @@ interface QuestionDao {
     fun getQuestionsFromCategory(categoryId : Int) : Flow<List<Question>>
 
     @Query("SELECT * from question WHERE category IN (:listOfInts)")
-    fun getQuestionsFromCategories(listOfInts : Array<Int>) : Flow<List<Question>>
+    fun getQuestionsFromCategories(listOfInts : List<Int>) : Flow<List<Question>>
 
 }
