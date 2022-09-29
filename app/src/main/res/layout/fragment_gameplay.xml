@@ -95,7 +95,7 @@
         android:background="@drawable/rect_round_answer"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:id="@+id/btnNext"/>
+        android:id="@+id/btnSkip"/>
     <!--    end of skip button -->
 
     <!--    quit button -->
