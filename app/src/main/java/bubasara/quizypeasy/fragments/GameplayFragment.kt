@@ -13,7 +13,6 @@ import bubasara.quizypeasy.databinding.FragmentGameplayBinding
 import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.models.QuizyPeasyApplication
 import bubasara.quizypeasy.utils.getListOfCategoriesFromJson
-import bubasara.quizypeasy.viewmodels.CategoryViewModel
 import bubasara.quizypeasy.viewmodels.QuestionViewModel
 import bubasara.quizypeasy.viewmodels.QuestionViewModelFactory
 import bubasara.quizypeasy.viewmodels.SharedViewModel
@@ -22,6 +21,9 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
     private var _binding : FragmentGameplayBinding? = null
     private val binding get() = _binding!!
+
+    var gameplayRandomQuestions : ArrayList<Question> = arrayListOf()
+    var index = 0
 
     private val questionViewModel : QuestionViewModel by viewModels {
         QuestionViewModelFactory(
@@ -44,7 +46,6 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
         super.onViewCreated(view, savedInstanceState)
 
         initQuestionsData()
-        generateQuestions()
 
         //click on Previous button -> get previous question
         binding.btnPrevious.setOnClickListener {
@@ -88,6 +89,7 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
                     }
                 }
             }
+            generateQuestions()
         }
     }
 
@@ -99,7 +101,6 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
         //  get questions
         questionViewModel.retrieveQuestionsFromCategories(categories).observe(this.viewLifecycleOwner) { questions ->
-            var gameplayRandomQuestions : ArrayList<Question> = arrayListOf()
             //  and pick 10 random questions for the gameplay
             while (gameplayRandomQuestions.size<10) {
                 var randomQuestion = questions.random()
@@ -109,7 +110,17 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
                     gameplayRandomQuestions.add(randomQuestion)
                 }
             }
+            initFirstQuestion()
         }
+    }
+
+    private fun initFirstQuestion() {
+        gameplayRandomQuestions.shuffle()
+        binding.layoutGameplay.txtViewQuestionContent.text = gameplayRandomQuestions[index].question
+        binding.layoutGameplay.btnAnswerA.text = gameplayRandomQuestions[index].answerA
+        binding.layoutGameplay.btnAnswerB.text = gameplayRandomQuestions[index].answerB
+        binding.layoutGameplay.btnAnswerC.text = gameplayRandomQuestions[index].answerC
+        binding.layoutGameplay.btnAnswerD.text = gameplayRandomQuestions[index].answerD
     }
 
 
