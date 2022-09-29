@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import bubasara.quizypeasy.R
 import bubasara.quizypeasy.databinding.FragmentGameplayBinding
+import bubasara.quizypeasy.models.Question
 import bubasara.quizypeasy.models.QuizyPeasyApplication
 import bubasara.quizypeasy.utils.getListOfCategoriesFromJson
+import bubasara.quizypeasy.viewmodels.CategoryViewModel
 import bubasara.quizypeasy.viewmodels.QuestionViewModel
 import bubasara.quizypeasy.viewmodels.QuestionViewModelFactory
+import bubasara.quizypeasy.viewmodels.SharedViewModel
 
 class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
 
@@ -25,6 +29,7 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
         )
     }
 
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +44,7 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
         super.onViewCreated(view, savedInstanceState)
 
         initQuestionsData()
+        generateQuestions()
 
         //click on Previous button -> get previous question
         binding.btnPrevious.setOnClickListener {
@@ -63,14 +69,13 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
         //questionViewModel.retrieveQuestionsFromCategory(1).observe(this.viewLifecycleOwner) { allQuestions ->
         questionViewModel.retrieveAllQuestions().observe(this.viewLifecycleOwner) { allQuestions ->
 
+            //  if question table in db is empty
             if(allQuestions.isNullOrEmpty())
             {
                 for (categoryWithQuestions in getListOfCategoriesFromJson(requireContext())) {
-                    //insertuj u bazu
 
-
+                    // insert questions into db
                     for(question in categoryWithQuestions.listOfQuestions) {
-
                         questionViewModel.addNewQuestion(
                             question.question,
                             question.answerA,
@@ -85,6 +90,28 @@ class GameplayFragment : Fragment(R.layout.fragment_gameplay) {
             }
         }
     }
+
+    //  generate 10 random questions out of questions from checked categories
+    private fun generateQuestions(){
+
+        //  from checked categories from ChooseCategoriesFragment
+        val categories =  sharedViewModel.listOfCheckedCategories   //categories ids
+
+        //  get questions
+        questionViewModel.retrieveQuestionsFromCategories(categories).observe(this.viewLifecycleOwner) { questions ->
+            var gameplayRandomQuestions : ArrayList<Question> = arrayListOf()
+            //  and pick 10 random questions for the gameplay
+            while (gameplayRandomQuestions.size<10) {
+                var randomQuestion = questions.random()
+                if (gameplayRandomQuestions.contains(randomQuestion)) {
+                    continue
+                } else {
+                    gameplayRandomQuestions.add(randomQuestion)
+                }
+            }
+        }
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
