@@ -14,16 +14,7 @@ class QuizyPeasyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // init pref managera, citanje iz asseta i uspis u pref ako je pref prazan
+        // init pref manager
         PreferenceManager.preferenceManagerInit(this)
-        /*if(PreferenceManager.getListOfCategories().isEmpty())
-            setListOfCategoriesFromJson(this)*/
     }
-
-
-/*    private fun setListOfCategoriesFromJson(application: Application){
-        val json = getJsonDataFromAsset(application, "data.json")
-        val list = object : TypeToken<List<Category>>() {}.type
-        PreferenceManager.setListOfCategories(Gson().fromJson(json, list))
-    }*/
 }

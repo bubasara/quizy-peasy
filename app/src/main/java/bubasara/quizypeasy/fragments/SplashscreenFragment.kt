@@ -21,7 +21,6 @@ class SplashscreenFragment : Fragment(R.layout.fragment_splashscreen) {
     private val binding get() = _binding!!
 
     private lateinit var logo : ImageView
-    private lateinit var circle : ImageView
     private lateinit var squareRotated : ImageView
     private lateinit var square : ImageView
     private lateinit var triangle : ImageView
@@ -30,7 +29,7 @@ class SplashscreenFragment : Fragment(R.layout.fragment_splashscreen) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSplashscreenBinding.inflate(inflater, container, false)
         return binding.root
     }

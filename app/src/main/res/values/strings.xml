@@ -45,4 +45,5 @@
     <string name="btnTempTextB">B</string>
     <string name="btnTempTextA">A</string>
     <string name="txtViewCorrectAnswer">Correct answer:</string>
+    <string name="background">background</string>
 </resources>

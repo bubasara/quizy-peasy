@@ -10,9 +10,11 @@
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_answer.xml" value="0.2005" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_gameplay_question.xml" value="0.2005" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/drawable/rect_round_question.xml" value="0.2005" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_create_new_question.xml" value="0.35104166666666664" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_delete_category.xml" value="0.2630208333333333" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_edit_delete_question.xml" value="0.2630208333333333" />
+        <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/dialog_how_to_play.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_choose_categories.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_create_new_category.xml" value="0.35104166666666664" />
         <entry key="..\:/AndroidProjects/quizy-peasy/app/src/main/res/layout/fragment_gameplay.xml" value="0.35104166666666664" />
