@@ -1,6 +1,7 @@
 package bubasara.quizypeasy.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,14 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
         this.listOfCategories = listOfCategories
     }
 
+    //  uncheck categories (list of all categories)
+    fun uncheckAllCategories()
+    {
+        for(category in listOfCategories) {
+            category.isChecked = false
+        }
+    }
+
     //  elements in recyclerview (item category)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val clCategoryContainerOuter : ConstraintLayout
@@ -47,10 +56,6 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
         //  getters
         fun getClCategoryContainerOuter() : ConstraintLayout {
             return clCategoryContainerOuter
-        }
-
-        fun getClCategoryContainerInner() : ConstraintLayout {
-            return clCategoryContainerInner
         }
 
         fun getTxtViewCategoryName() : TextView {
@@ -93,9 +98,11 @@ class ChooseCategoriesAdapter (var context: Context, private val interfaceListen
             holder.getImgViewCategoryImage().context, imgCategory
         ))
 
-        //  check/uncheck category
+        //  check/uncheck category (view)
         if (category.isChecked) {
             holder.getImgViewCheck().setBackgroundResource(R.drawable.checked)
+        } else {
+            holder.getImgViewCheck().setBackgroundResource(R.drawable.square)
         }
 
         holder.getImgViewCheck().setOnClickListener {

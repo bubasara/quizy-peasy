@@ -47,9 +47,20 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        //  on every return from StatsFragment, uncheck all categories (view and list of categories
+        if(::chooseCategoriesAdapter.isInitialized) {
+            if(sharedViewModel.listOfCheckedCategories.isEmpty()){
+                chooseCategoriesAdapter.uncheckAllCategories()
+                chooseCategoriesAdapter.notifyDataSetChanged()
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initCategoriesData()
 
         chooseCategoriesAdapter = ChooseCategoriesAdapter(requireContext(),
@@ -79,11 +90,11 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
         binding.recyclerViewCategories.layoutManager = LinearLayoutManager(context)
 
         // todo -> when new category is being added
-/*        if(sharedViewModel.getNewCategory() != null) {
-            viewModel.listOfCategories.add(sharedViewModel.getNewCategory()!!)
+        /*if(sharedViewModel.getNewCategory() != null) {
+            sharedViewModel.listOfCategories.add(sharedViewModel.getNewCategory()!!)
             chooseCategoriesAdapter.notifyDataSetChanged()
 
-            PreferenceManager.setListOfCategories(viewModel.listOfCategories)
+            PreferenceManager.setListOfCategories(sharedViewModel.listOfCategories)
             sharedViewModel.resetNewCategory()
         }*/
 
@@ -93,11 +104,6 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
             if (it) {
 
                 categoryViewModel.deleteCategory(categoryViewModel.allCategoriesMutable.value!![deletePosition])
-
-                //viewModel.allCategoriesMutable.value?.removeAt(deletePosition)
-                //chooseCategoriesAdapter.deleteItem(deletePosition)
-
-                //PreferenceManager.setListOfCategories(viewModel.listOfCategories)
                 chooseCategoriesAdapter.notifyItemRemoved(deletePosition)
                 chooseCategoriesAdapter.notifyItemRangeChanged(
                     deletePosition,
@@ -135,22 +141,18 @@ class ChooseCategoriesFragment : Fragment(R.layout.fragment_choose_categories) {
                 }
             }
 
+            loadCategories()
+
             categoryViewModel.allCategoriesMutable = MutableLiveData(allCategories.toMutableList())
             chooseCategoriesAdapter.setListOfCategories(allCategories)
             chooseCategoriesAdapter.notifyDataSetChanged()
         }
     }
 
-
-
-
-
-    override fun onPause() {
-        super.onPause()
-        //  if category checked/unchecked
-        if (hasCategoryCheckStateChanged) {
-            //PreferenceManager.setListOfCategories(viewModel.listOfCategories)
-        }
+    //  when categories are loaded, remove loading bar and show recycler view with categories
+    private fun loadCategories() {
+        binding.loadingBar.visibility = View.GONE
+        binding.recyclerViewCategories.visibility = View.VISIBLE
     }
 
     override fun onDestroy() {
