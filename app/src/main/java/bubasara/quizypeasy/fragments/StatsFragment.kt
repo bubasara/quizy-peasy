@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -22,9 +24,21 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val callback: OnBackPressedCallback =
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    Toast.makeText(requireContext(), "No turning back, sorry!", Toast.LENGTH_SHORT).show()
+                }
+            }
+        requireActivity().onBackPressedDispatcher.addCallback(this, callback)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,7 +47,8 @@ class StatsFragment : Fragment(R.layout.fragment_stats) {
         //click on Play again button -> go to Choose Categories fragment
         binding.btnPlayAgain.setOnClickListener {
             sharedViewModel.resetListOfCheckedCategories()
-            findNavController().navigate(R.id.action_statsFragment_to_chooseCategoriesFragment)
+            findNavController().popBackStack(R.id.chooseCategoriesFragment, false)
+            //findNavController().navigate(R.id.action_statsFragment_to_chooseCategoriesFragment)
         }
 
         //click on Quit button -> go to Leave dialog

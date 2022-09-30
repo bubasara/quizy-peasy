@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_splashscreen">
         <action
             android:id="@+id/action_splashscreenFragment_to_homescreenFragment"
-            app:destination="@id/homescreenFragment" />
+            app:destination="@id/homescreenFragment"
+            app:popUpTo="@id/splashscreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homescreenFragment"
@@ -114,9 +116,6 @@
         <action
             android:id="@+id/action_statsFragment_to_leaveDialog"
             app:destination="@id/leaveDialog" />
-        <action
-            android:id="@+id/action_statsFragment_to_chooseCategoriesFragment"
-            app:destination="@id/chooseCategoriesFragment" />
     </fragment>
     <dialog
         android:id="@+id/leaveDialog"
