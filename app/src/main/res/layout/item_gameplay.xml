@@ -5,13 +5,6 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--    todo delete temp    -->
-<!--    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/bg_gameplay"
-        android:scaleType="centerCrop"/>-->
-
     <!--    container   -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,15 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4"
+            app:layout_constraintGuide_percent="0.6"
             android:id="@+id/glQuestionBottom"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5"
-            android:id="@+id/glAnswersBottom"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:layout_width="match_parent"
@@ -93,7 +79,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@id/glQuestionTop"
-            app:layout_constraintBottom_toTopOf="@id/clButtons"
+            app:layout_constraintBottom_toTopOf="@id/glQuestionBottom"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:paddingLeft="15dp"
@@ -106,32 +92,30 @@
             android:textColor="@color/purple_700"
             android:background="@drawable/rect_round_gameplay_question"
             android:id="@+id/txtViewQuestionContent"
+            android:visibility="invisible"
             tools:targetApi="o" />
-        <!--    end of question content    -->
 
-        <!--    answers -->
-        <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txtViewQuestionContent"
-            app:layout_constraintBottom_toTopOf="@id/clButtons"
-            app:layout_constraintLeft_toRightOf="@id/glLeftVertical"
-            app:layout_constraintRight_toLeftOf="@id/glRightVertical"
-            android:text="@string/txtViewAnswers"
-            android:autoSizeTextType="uniform"
+        <ProgressBar
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/glQuestionTop"
+            app:layout_constraintBottom_toTopOf="@id/glQuestionBottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="@color/purple_700"
-            android:id="@+id/txtViewAnswers"
-            tools:targetApi="o" />-->
-        <!--    end of answers -->
+            android:indeterminateTint="@color/purple_200"
+            app:layout_constraintDimensionRatio="1:2"
+            android:id="@+id/loadingBar"/>
+        <!--    end of question content    -->
 
         <!--    container for buttons   -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            app:layout_constraintTop_toBottomOf="@id/txtViewQuestionContent"
+            app:layout_constraintTop_toBottomOf="@id/glQuestionBottom"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/clButtons">
             <!--    answer A    -->
@@ -139,7 +123,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/btnAnswerC"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -148,6 +132,7 @@
                 android:background="@drawable/rect_round_answer"
                 android:textColor="@color/white"
                 android:autoSizeTextType="uniform"
+                android:maxLines="2"
                 android:autoSizeMaxTextSize="18dp"
                 android:gravity="center"
                 android:id="@+id/btnAnswerA"
@@ -159,7 +144,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/btnAnswerD"
                 app:layout_constraintLeft_toRightOf="@id/btnAnswerA"
@@ -168,6 +153,7 @@
                 android:background="@drawable/rect_round_answer"
                 android:textColor="@color/white"
                 android:autoSizeTextType="uniform"
+                android:maxLines="2"
                 android:autoSizeMaxTextSize="18dp"
                 android:gravity="center"
                 android:id="@+id/btnAnswerB"
@@ -179,7 +165,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
                 app:layout_constraintTop_toBottomOf="@id/btnAnswerA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -188,6 +174,7 @@
                 android:background="@drawable/rect_round_answer"
                 android:textColor="@color/white"
                 android:autoSizeTextType="uniform"
+                android:maxLines="2"
                 android:autoSizeMaxTextSize="18dp"
                 android:gravity="center"
                 android:id="@+id/btnAnswerC"
@@ -199,7 +186,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 app:layout_constraintTop_toBottomOf="@id/btnAnswerB"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/btnAnswerC"
@@ -208,6 +195,7 @@
                 android:background="@drawable/rect_round_answer"
                 android:textColor="@color/white"
                 android:autoSizeTextType="uniform"
+                android:maxLines="2"
                 android:autoSizeMaxTextSize="18dp"
                 android:gravity="center"
                 android:id="@+id/btnAnswerD"
